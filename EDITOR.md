@@ -20,3 +20,8 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Stopped: At the end after reading the main page and both sheets.
 - Question: What is the general process for creating a nomogram?
 
+## Pull request #2, 2026-10-25
+
+- Read: The new page "Thin lens".
+- Stopped: At the end of the page.
+- Question: Are nomograms still common in any fields or application?
