@@ -4,10 +4,75 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Coming soon</title>
+<title>Index Line: working nomograms</title>
+<meta name="description" content="Working nomograms: charts that compute when you lay a straight line across them, each drawn for a real formula, with what its scales reveal about that formula.">
+<meta property="og:title" content="Index Line: working nomograms">
+<meta property="og:description" content="Charts that compute when you lay a straight line across them, each drawn for a real formula, with what its scales reveal about that formula.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-<p>An AI, Claude, will make this site as part of an experiment. Nothing is here yet.</p>
-<footer><a href="https://unpromptedworks.com/#about">About this experiment</a></footer>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Working nomograms</span>
+</header>
+<main>
+<section class="home-head">
+  <div>
+    <h1>Lay a line across two scales. <span class="nb">Read the third.</span></h1>
+    <p class="lede">A nomogram is a chart that computes. Each scale stands for one quantity in a formula, and any straight line that crosses them all lands on values that satisfy it. For about seventy-five years they did quick, accurate arithmetic in engineering offices, pharmacies and aircraft cockpits. Then pocket calculators arrived.</p>
+    <p>This site draws them again, one formula to a sheet, and works them in the browser: drag a ring and the red line, the index line, moves with it. The claim of the site is that the old instrument is still the better way to <em>understand</em> a formula, if not to compute one. A calculator gives the answer and hides the shape. A nomogram prints the shape. Where its ticks crowd together the formula is slack; where they spread apart it is sensitive; where two scales stand tells you how the inputs trade off. Each sheet comes with remarks on what its scales show.</p>
+  </div>
+  <figure class="chart">
+    <svg id="adder" aria-label="A nomogram for adding two numbers"></svg>
+    <figcaption>Sheet 00: addition. <span id="sum">3 + 5 = 8</span>. The middle scale is drawn at half the spacing of the outer two, which is all it takes for a straight line to add.</figcaption>
+  </figure>
+</section>
+
+<h2>Drawing register</h2>
+<table class="register">
+  <thead><tr><th>No.</th><th>Sheet</th><th>Computes</th><th>Scales</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="no">01</td>
+      <td class="title"><a href="/sheets/dew-point/">Dew point</a></td>
+      <td>The temperature at which dew forms, from air temperature and humidity. Why a simple rule of thumb holds in moist air and fails in dry.</td>
+      <td>Three parallel, sum form</td>
+    </tr>
+    <tr>
+      <td class="no">02</td>
+      <td class="title"><a href="/sheets/body-surface/">Body surface area, two ways</a></td>
+      <td>Skin area from weight and height, by a 1916 formula built on nine people and a 2000 refit of the same paper’s data, read with one line.</td>
+      <td>Three parallel, logarithmic, middle scale doubled</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>The name</h2>
+<p>The index line, also called the isopleth, is the line a straightedge makes when you lay it across a nomogram. Here it is a red stroke. The French engineer Maurice d’Ocagne is credited with inventing nomography in 1884. Everything else on one of his sheets is printed once and never changes; the index line is the only part that moves.</p>
+<p class="small">Source: “Nomogram,” <a href="https://en.wikipedia.org/wiki/Nomogram">Wikipedia</a>, for d’Ocagne and 1884, the seventy-five years, the fields of use, and the terms index line and isopleth.</p>
+</main>
+<footer class="foot">
+  <span>Index Line: working nomograms</span>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+const id = (v) => v;
+const ticks = { major: range(0, 10, 1), minor: range(0, 10, 0.2) };
+nomogram(document.getElementById("adder"), {
+  width: 420, height: 460, xA: 70, xC: 350, top: 52, bottomPad: 46,
+  A: { label: "a", min: 0, max: 10, step: 0.5, value: 3, f: id, ticks, fmt: (v) => v },
+  C: { label: "b", min: 0, max: 10, step: 0.5, value: 5, f: id, ticks },
+  mids: [{
+    label: "a + b", g: id, alpha: 1, beta: 1, gamma: 0, min: -1, max: 21, side: "right",
+    ticks: { major: range(0, 20, 2), minor: range(0, 20, 0.5) },
+  }],
+}, (a, b, [s]) => {
+  document.getElementById("sum").textContent = `${a} + ${b} = ${+s.toFixed(2)}`;
+});
+</script>
 </body>
 </html>

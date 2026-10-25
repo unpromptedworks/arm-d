@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 01: Dew point · Index Line</title>
+<meta name="description" content="A working nomogram for the dew point. Lay a line from air temperature to relative humidity and read the temperature at which dew forms.">
+<meta property="og:title" content="Sheet 01: Dew point · Index Line">
+<meta property="og:description" content="A working nomogram for the dew point. Lay a line from air temperature to relative humidity and read the temperature at which dew forms.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 01 of 02</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <svg id="chart" aria-label="Dew point nomogram: air temperature on the left, relative humidity on the right, dew point in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Dew point</h1>
+    <p class="lede">The temperature to which air must cool before water condenses out of it, from the air temperature and the relative humidity.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Air</dt><dd id="r-t">20.0 °C</dd></div>
+      <div><dt>Humidity</dt><dd id="r-rh">60 %</dd></div>
+      <div class="out"><dt>Dew point</dt><dd id="r-td">12.0 °C</dd></div>
+      <div><dt>Spread</dt><dd id="r-sp">8.0 °C</dd></div>
+    </dl>
+    <p class="small">The middle value is the formula below, solved exactly for the line you have drawn. Read off the paper, the chart is good to about half a degree.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the air temperature.</li>
+      <li>Set the right ring at the relative humidity.</li>
+      <li>Read the dew point where the line crosses the middle scale.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Look at the spacing before you look at the answer. The humidity scale is logarithmic: the stretch from 10 to 30 percent takes nearly as much paper as the stretch from 30 to 100. Paper is sensitivity. Where the ticks spread apart, a small change in humidity moves the line a long way, and the dew point with it.</p>
+    <p>So there are two kinds of air on this chart. At 20 °C, letting the humidity fall from 100 to 50 percent lowers the dew point from 20.0 to 9.3 °C, close to one degree for every five percent. That is the rule of thumb Mark Lawrence set out in 2005, noting that it did not seem to be widely known among meteorologists, and the chart shows why it holds there: above 50 percent the ticks are nearly even. Below 50 the ticks open out. The next forty points, from 50 down to 10 percent, take the dew point from 9.3 to −12.6 °C, almost three degrees for every five percent. In dry air the rule of thumb is wrong by a factor of nearly three, and the chart says so before you compute anything.</p>
+    <p>Look too at the middle scale. It is the temperature scale again, shrunk and slid down. That is not a drawing convenience. The dew point is the temperature at which the humidity term vanishes, so it must be measured with the same ruler as the air. Set the right ring at 100 percent and the line crosses the middle at the temperature you started from.</p>
+    <p class="small">Below 0 °C the formula gives the dew point over liquid water, not the frost point over ice.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">γ = ln(RH/100) + bT/(c + T)</span>, and <span class="f">T<sub>d</sub> = cγ/(b − γ)</span>, with <span class="f">b = 17.625</span> and <span class="f">c = 243.04 °C</span>. The scales are <span class="f">bT/(c + T)</span> on the left, <span class="f">ln(RH/100)</span> on the right, and their sum in the middle, which is what lets a straight line add them.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Mark G. Lawrence, “The relationship between relative humidity and the dewpoint temperature in moist air: a simple conversion and applications,” <i>Bulletin of the American Meteorological Society</i> 86 (2005): 225–233, <a href="https://doi.org/10.1175/BAMS-86-2-225">doi:10.1175/BAMS-86-2-225</a>. The coefficients, their range (−40 to 50 °C, relative error under 0.4 percent in saturation vapour pressure), and the rule of thumb of about 1 °C per 5 percent for humidity above 50 percent, which Lawrence says “does not appear to be widely known by the meteorological community.” Lawrence also notes that calling this the Magnus formula is “a rather inaccurate attribution.”</li>
+      <li>O. A. Alduchov and R. E. Eskridge, “Improved Magnus form approximation of saturation vapor pressure,” <i>Journal of Applied Meteorology</i> 35 (1996): 601–609, <a href="https://doi.org/10.1175/1520-0450(1996)035%3C0601:IMFAOS%3E2.0.CO;2">doi</a>. The coefficients as recommended there, cited through Lawrence.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>01, Dew point</dd>
+      <dt>Type</dt><dd>Three parallel scales, sum form</dd>
+      <dt>Range</dt><dd>Air −10 to 45 °C; humidity 10 to 100 percent</dd>
+      <dt>Drawn</dt><dd>25 October 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+
+const b = 17.625, c = 243.04;
+const mag = (t) => (b * t) / (c + t);
+const n1 = (v) => v.toFixed(1);
+const minus = (s) => String(s).replace("-", "−");
+
+nomogram(document.getElementById("chart"), {
+  width: 600, height: 780,
+  A: {
+    label: "Air", unit: "°C", min: -10, max: 45, step: 0.5, value: 20, f: mag,
+    ticks: { major: range(-10, 45, 5), minor: range(-10, 45, 1) }, fmt: minus,
+  },
+  C: {
+    label: "Humidity", unit: "percent", min: 10, max: 100, step: 1, value: 60,
+    f: (rh) => Math.log(rh / 100),
+    ticks: {
+      major: [10, 12, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100],
+      minor: [...range(10, 40, 1), ...range(40, 100, 2)],
+    },
+  },
+  mids: [{
+    label: "Dew point", unit: "°C", g: mag, alpha: 1, beta: 1, gamma: 0,
+    min: -45, max: 46, side: "right", fmt: minus,
+    ticks: { major: range(-35, 45, 5), minor: range(-38, 45, 1) },
+  }],
+}, (t, rh, [td]) => {
+  document.getElementById("r-t").textContent = `${minus(n1(t))} °C`;
+  document.getElementById("r-rh").textContent = `${rh} %`;
+  document.getElementById("r-td").textContent = `${minus(n1(td))} °C`;
+  document.getElementById("r-sp").textContent = `${n1(t - td)} °C`;
+});
+</script>
+</body>
+</html>

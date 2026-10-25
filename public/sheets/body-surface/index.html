@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 02: Body surface area, two ways · Index Line</title>
+<meta name="description" content="One straight line, two formulas: a working nomogram that reads body surface area by Du Bois and Du Bois (1916) and by Shuter and Aslani's refit of their data (2000) at once.">
+<meta property="og:title" content="Sheet 02: Body surface area, two ways · Index Line">
+<meta property="og:description" content="One straight line, two formulas: a working nomogram that reads body surface area by Du Bois and Du Bois (1916) and by Shuter and Aslani's refit of their data (2000) at once.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 02 of 02</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <svg id="chart" aria-label="Body surface area nomogram: weight on the left, height on the right, two surface area scales between them"></svg>
+    <figcaption>Two middle scales, back to back: Shuter and Aslani 2000 reads to the left of the pair, Du Bois 1916 to the right. Drag a red ring, or tab to it and use the arrow keys.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Body surface area, two ways</h1>
+    <p class="lede">The area of a person’s skin, estimated from weight and height. One straight line reads it by two formulas at once: the one built on nine bodies in 1916, and the one refitted from all forty-two the same paper reported.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Weight</dt><dd id="r-w">70 kg</dd></div>
+      <div><dt>Height</dt><dd id="r-h">175 cm</dd></div>
+      <div class="out"><dt>Du Bois</dt><dd id="r-d">1.85 m²</dd></div>
+      <div class="out"><dt>Shuter–Aslani</dt><dd id="r-s">1.82 m²</dd></div>
+      <div><dt>Difference</dt><dd id="r-x">−1.5 %</dd></div>
+    </dl>
+    <p class="small">For reading, not for dosing. The values are the two formulas solved exactly for the line you have drawn.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the weight.</li>
+      <li>Set the right ring at the height.</li>
+      <li>Read the surface area where the line crosses the pair of middle scales: the left-hand figures for Shuter and Aslani, the right-hand figures for Du Bois.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>In 1916 D. Du Bois and E. F. Du Bois fitted a formula for skin area to height and weight. It is still the standard one, used, in the words of a 2000 reappraisal, “widely to normalise physiological parameters.” The same reappraisal pointed out what few of its users know: the fit rests on nine subjects, measured by encasing them in moulds. B. Shuter and A. Aslani refitted the model to all forty-two subjects the original paper reported, using measurements of body parts that Du Bois and Du Bois had left out of their fit, and got different constants.</p>
+    <p>A chart of this kind is a good place to compare them, because on it a formula has a position. Each formula is a power law, a constant times weight to one power and height to another. Taking logarithms turns that into a sum, and a sum is what three parallel scales compute. Where the answer scale stands between the outer two is fixed by nothing but the ratio of the two powers. Du Bois’s 0.425 to 0.725 puts its scale at one place. Shuter and Aslani’s 0.441 to 0.655 puts theirs a little to the left. The thin gap between the two lines is the whole of the disagreement about how weight and height trade off, drawn to scale.</p>
+    <p>It is a small gap. Anywhere on this sheet the two answers differ by at most about 4 percent, a figure reached only in the extreme corner, and over most of it by one to three. The disagreement has a direction, though. The two agree along a band of stocky builds, from about 65 kg at 140 cm to 150 kg at 168 cm. Away from that band, toward the tall and light, the refit gives less skin than Du Bois, and the gap is widest at the tall, light corner of the chart. Lower the left ring, raise the right one, and watch the difference grow.</p>
+
+    <h2>Formulas</h2>
+    <p>Du Bois: <span class="f">A = 0.007184 × W<sup>0.425</sup> × H<sup>0.725</sup></span>. Shuter and Aslani: <span class="f">A = 0.00949 × W<sup>0.441</sup> × H<sup>0.655</sup></span>. A in square metres, W in kilograms, H in centimetres. Shuter and Aslani give their constant as 94.9 for an area in square centimetres. The scales are <span class="f">log W</span>, <span class="f">log H</span>, and <span class="f">log A</span>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>D. Du Bois and E. F. Du Bois, “A formula to estimate the approximate surface area if height and weight be known,” <i>Archives of Internal Medicine</i> 17 (1916): 863–871; reprinted in <i>Nutrition</i> 5 (1989): 303–311, <a href="https://pubmed.ncbi.nlm.nih.gov/2520314/">PubMed 2520314</a>.</li>
+      <li>B. Shuter and A. Aslani, “Body surface area: Du Bois and Du Bois revisited,” <i>European Journal of Applied Physiology</i> 82 (2000): 250–254, <a href="https://doi.org/10.1007/s004210050679">doi:10.1007/s004210050679</a>; abstract at <a href="https://pubmed.ncbi.nlm.nih.gov/10929220/">PubMed 10929220</a>. The nine subjects, the moulds, the forty-two subjects and the refitted constants.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>02, Body surface area, two ways</dd>
+      <dt>Type</dt><dd>Three parallel logarithmic scales, the middle one doubled</dd>
+      <dt>Range</dt><dd>Weight 30 to 150 kg; height 140 to 210 cm</dd>
+      <dt>Drawn</dt><dd>25 October 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+
+const lg = Math.log10;
+const D = (w, h) => 0.007184 * w ** 0.425 * h ** 0.725;
+const S = (w, h) => 0.00949 * w ** 0.441 * h ** 0.655;
+const areaTicks = { major: range(1.0, 3.0, 0.1), minor: range(1.0, 3.0, 0.02) };
+const f1 = (v) => v.toFixed(1);
+
+nomogram(document.getElementById("chart"), {
+  width: 640, height: 800, xA: 90, xC: 560, top: 70,
+  A: {
+    label: "Weight", unit: "kg", min: 30, max: 150, step: 1, value: 70, f: lg,
+    ticks: {
+      major: [30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
+      minor: [...range(30, 60, 1), ...range(60, 150, 2)],
+    },
+  },
+  C: {
+    label: "Height", unit: "cm", min: 140, max: 210, step: 1, value: 175, f: lg,
+    ticks: { major: range(140, 210, 10), minor: range(140, 210, 1) },
+  },
+  mids: [
+    { label: "Shuter", g: lg, alpha: 0.441, beta: 0.655, gamma: lg(0.00949),
+      min: 0.5, max: 4, side: "left", nameAnchor: "end", nameDy: -20, ticks: areaTicks, fmt: f1 },
+    { label: "Du Bois", unit: "m²", g: lg, alpha: 0.425, beta: 0.725, gamma: lg(0.007184),
+      min: 0.5, max: 4, side: "right", nameAnchor: "start", ticks: areaTicks, fmt: f1 },
+  ],
+}, (w, h, [s, d]) => {
+  document.getElementById("r-w").textContent = `${w} kg`;
+  document.getElementById("r-h").textContent = `${h} cm`;
+  document.getElementById("r-d").textContent = `${d.toFixed(2)} m²`;
+  document.getElementById("r-s").textContent = `${s.toFixed(2)} m²`;
+  const x = (s / d - 1) * 100;
+  document.getElementById("r-x").textContent = `${x < 0 ? "−" : "+"}${Math.abs(x).toFixed(1)} %`;
+});
+</script>
+</body>
+</html>
