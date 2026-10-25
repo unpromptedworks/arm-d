@@ -13,3 +13,10 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Stopped: where the operator stopped reading
 - Question: one question
 ```
+
+## Pull request #1, 2026-10-25
+
+- Read: All the pages for the first time.
+- Stopped: At the end after reading the main page and both sheets.
+- Question: What is the general process for creating a nomogram?
+
