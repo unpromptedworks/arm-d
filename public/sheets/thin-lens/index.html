@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 03: Thin lens · Index Line</title>
+<meta name="description" content="A working nomogram for the thin-lens equation, drawn on reciprocal scales on which infinity is an ordinary tick and the line passes through it into virtual images.">
+<meta property="og:title" content="Sheet 03: Thin lens · Index Line">
+<meta property="og:description" content="A working nomogram for the thin-lens equation, drawn on reciprocal scales on which infinity is an ordinary tick and the line passes through it into virtual images.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 03 of 03</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <label class="hold"><input type="checkbox" id="hold"> Hold the lens: keep the focal length fixed while you move either ring</label>
+    <svg id="chart" aria-label="Thin-lens nomogram: object distance on the left, image distance on the right, focal length in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Thin lens</h1>
+    <p class="lede">Where a lens forms an image: the object distance, the image distance and the focal length, any two of which give the third.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Object</dt><dd id="r-u">35 cm</dd></div>
+      <div><dt>Image</dt><dd id="r-v">14 cm</dd></div>
+      <div class="out"><dt>Focal length</dt><dd id="r-f">10 cm</dd></div>
+      <div><dt>Image is</dt><dd id="r-m">real, 0.4×</dd></div>
+    </dl>
+    <p class="small" id="r-note">Object to image: 49 cm. A positive image distance is a real image, on the far side of the lens, which a screen can catch; a negative one is virtual, on the object’s side, and only seen through the lens.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the distance from the object to the lens.</li>
+      <li>Set the right ring at the distance from the lens to the sharp image on the screen.</li>
+      <li>Read the focal length where the line crosses the middle scale.</li>
+      <li>To see one lens at work, set the line through its focal length, tick “Hold the lens” and move the object.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Find infinity first. On every scale here it is an ordinary tick, a third of the way up the drawing, a place you can point at. The object scale stops there, since a real object stands in front of the lens; the image and focal-length scales run on below it. A calculator has no such place. Ask it for the image of an object 10 cm from a 10 cm lens and it reports an error; move the object a millimetre either way and it jumps from about ten metres on one side of the lens to about ten metres on the other. The chart puts the same event in one smooth stroke. Hold the lens at 10 cm and bring the object in from far away: the image ring sinks, crosses ∞ and keeps going, into the negative distances of the virtual image you see in a magnifying glass. Nothing about the light breaks at the focal point. Only the arithmetic of distances does.</p>
+    <p>The ruler under each scale is not distance but its reciprocal, which opticians call vergence and measure in dioptres. That is why the ticks crowd. Everything from 2 metres to infinity fits in the bottom half-dioptre of the object scale, a fortieth of its length, while the single centimetre from 5 to 6 cm takes nearly seven times as much. For a lens, far is nearly all the same distance, and near is where the work is. A camera lens focuses by moving away from the sensor, by <span class="f">f²/(u − f)</span> for an object at <span class="f">u</span>, which for distant objects is nearly proportional to <span class="f">1/u</span>. So the distance marks on a focusing ring crowd toward ∞ for the same reason these ticks do.</p>
+    <p>Then hold the lens and watch the line. Every position it can take passes through one point on the middle scale, so a single lens is a single point, and focusing it is turning the line about that point. When the line is level the object and image distances are equal, each twice the focal length, and the image is the same size as the object. The readout shows the object-to-image distance: as you turn the line away from level in either direction it grows. Level is the shortest it can be, four focal lengths. Put the candle and the screen any closer and no position of this lens will focus one on the other.</p>
+    <p>The usual nomogram for this formula is a different drawing: three evenly graduated scales from one corner, one across, one up and the answer on the diagonal. That one is good for computing and hides the reciprocal in its geometry. This one prints the reciprocal in its ticks, where you can see it.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">1/u + 1/v = 1/f</span>, the Gaussian thin-lens equation, with <span class="f">u</span> the object distance, <span class="f">v</span> the image distance, negative for a virtual image, and <span class="f">f</span> the focal length, negative for a diverging lens. Each term is a vergence: a reciprocal distance, in dioptres when the distance is in metres. With distances in centimetres the equation reads <span class="f">100/u + 100/v = 100/f</span>, and those three terms are what the rulers carry. Magnification is <span class="f">−v/u</span>.</p>
+
+    <h2>Construction</h2>
+    <p>Every sheet on this site is drawn the same way, and this one shows the steps plainly.</p>
+    <ol class="directions">
+      <li>Write the formula as a sum of terms, each holding one variable: here 100/u + 100/v = 100/f.</li>
+      <li>Give each outer variable a vertical scale on which height is proportional to its term. Here both outer scales are the same ruler, −10 to 20 dioptres, so they get the same height for the same term and infinity, 0 dioptres, lands at the same height on both.</li>
+      <li>Place the third scale where a straight line averages the two outer heights in the right proportion. Equal outer rulers put it exactly halfway, and since halfway is the average of two heights, its ruler is half as long per dioptre: it reads the sum.</li>
+      <li>Label every tick with the quantity a reader knows, here centimetres, not with the term it stands for.</li>
+    </ol>
+    <p>Sheet 01 uses unequal rulers, so its middle scale is not halfway; Sheet 02 has two middle scales for two formulas. The construction is otherwise the same.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>“Thin lens,” <a href="https://en.wikipedia.org/wiki/Thin_lens">Wikipedia</a>. The Gaussian thin-lens equation, and negative image distances as virtual images.</li>
+      <li>“Lens,” <a href="https://en.wikipedia.org/wiki/Lens">Wikipedia</a>. Newton’s form, <span class="f">x₁x₂ = f²</span>, with each distance measured from a focal point, from which the extension <span class="f">f²/(u − f)</span> follows; the minimum distance of 4f between an object and its real image; and the smaller, upright image of a diverging lens.</li>
+      <li>“Focal length,” <a href="https://en.wikipedia.org/wiki/Focal_length">Wikipedia</a>. Positive focal length for a converging lens, negative for a diverging one; optical power as the reciprocal of the focal length in metres, measured in dioptres.</li>
+      <li>“Vergence (optics),” <a href="https://en.wikipedia.org/wiki/Vergence_(optics)">Wikipedia</a>. Vergence as the reciprocal of distance, in dioptres.</li>
+      <li>The corner nomogram for formulas of this type, with its diagonal answer scale: “Nomogram,” <a href="https://en.wikipedia.org/wiki/Nomogram">Wikipedia</a>.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>03, Thin lens</dd>
+      <dt>Type</dt><dd>Three parallel scales, sum form, reciprocal</dd>
+      <dt>Range</dt><dd>Object 5 cm to ∞; image −10 cm to ∞ to 5 cm; focal length −10 cm to ∞ to 2.5 cm</dd>
+      <dt>Drawn</dt><dd>25 October 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram } from "/js/nomogram.js";
+
+// Every scale's variable is vergence, 100/x for x in centimetres, in dioptres.
+const id = (p) => p;
+const D = (cm) => (cm === Infinity ? 0 : 100 / cm);
+const minus = (s) => String(s).replace("-", "−");
+const cm = (p) => (Math.abs(p) < 1e-9 ? "∞" : minus(+(100 / p).toPrecision(3)));
+
+// Round a vergence to a distance a reader would set: half centimetres
+// up close, whole metres far off, and infinity beyond 5 m.
+function nice(p) {
+  if (Math.abs(p) < 0.2) return 0;
+  const x = Math.abs(100 / p);
+  const q = x < 20 ? 0.5 : x < 50 ? 1 : x < 100 ? 5 : x < 200 ? 10 : 50;
+  return Math.sign(p) * (100 / (Math.round(x / q) * q));
+}
+
+const far = [Infinity, 100, 50, 30, 20, 15, 12, 10, 8, 7, 6, 5];
+const farMinor = [500, 200, 150, 70, 40, 25, 60, 35, 45, 18, 16, 14, 13, 11, 9, 7.5, 6.5, 5.5];
+const virt = [-10, -12, -15, -20, -30, -50];
+const virtMinor = [-11, -13, -14, -17, -25, -40, -70, -100, -200];
+
+const A = {
+  label: "Object", unit: "cm", lo: -10, hi: 20, min: 0, max: 20, step: 0.1, value: D(35),
+  f: id, snap: nice, fmt: cm, ticks: { major: far.map(D), minor: farMinor.map(D) },
+};
+const C = {
+  label: "Image", unit: "cm", lo: -10, hi: 20, min: -10, max: 20, step: 0.1, value: D(14),
+  f: id, snap: nice, fmt: cm,
+  ticks: { major: [...far, ...virt].map(D), minor: [...farMinor, ...virtMinor].map(D) },
+};
+const focal = [2.5, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 30, 50, Infinity, -50, -20, -15, -10];
+const focalMinor = [3.5, 4.5, 9, 11, 25, 40, 100, -100, -30, -12];
+
+const hold = document.getElementById("hold");
+let last = { a: A.value, c: C.value, P: A.value + C.value };
+const within = (s, p) => Math.min(s.max, Math.max(s.min, p));
+let chart = null;
+chart = nomogram(document.getElementById("chart"), {
+  width: 600, height: 780,
+  A, C,
+  mids: [{
+    label: "Focal length", unit: "cm", g: id, alpha: 1, beta: 1, gamma: 0,
+    min: -25, max: 45, side: "right", fmt: cm,
+    ticks: { major: focal.map(D), minor: focalMinor.map(D) },
+  }],
+}, show);
+
+
+function show(a, c, [P]) {
+  // Holding the lens: whichever ring moved, the other follows so that
+  // the line keeps passing through the same focal length.
+  if (hold?.checked && chart && (a !== last.a || c !== last.c)) {
+    let na = a, nc = c;
+    if (a !== last.a) { nc = within(C, last.P - a); na = last.P - nc; }
+    else { na = within(A, last.P - c); nc = last.P - na; }
+    last = { a: na, c: nc, P: last.P };
+    chart.set(na, nc);
+    return;
+  }
+  last = { a, c, P: a + c };
+  const u = cm(a), v = cm(c), f = cm(P);
+  document.getElementById("r-u").textContent = a === 0 ? "∞" : `${u} cm`;
+  document.getElementById("r-v").textContent = c === 0 ? "∞" : `${v} cm`;
+  document.getElementById("r-f").textContent = Math.abs(P) < 1e-9 ? "∞" : `${f} cm`;
+  // Magnification −v/u = −(1/u)/(1/v) in vergences.
+  let kind;
+  if (Math.abs(c) < 1e-9) kind = "at ∞";
+  else if (Math.abs(a) < 1e-9) kind = c > 0 ? "real, 0×" : "virtual";
+  else {
+    const m = a / c;
+    kind = `${c > 0 ? "real" : "virtual"}, ${+Math.abs(m).toPrecision(2)}×`;
+  }
+  document.getElementById("r-m").textContent = kind;
+  let note;
+  if (Math.abs(a) < 1e-9 || Math.abs(c) < 1e-9) note = "Object to image: infinite.";
+  else if (c > 0) note = `Object to image: ${+(100 / a + 100 / c).toPrecision(3)} cm, a real image the screen can catch.`;
+  else if (P > 0) note = "A virtual image, on the object’s side of the lens: upright, magnified, seen only by looking through the lens, as in a magnifying glass.";
+  else note = "A virtual image, on the object’s side of the lens: upright and smaller than the object. The focal length is negative: this is a diverging lens.";
+  document.getElementById("r-note").textContent = note;
+}
+</script>
+</body>
+</html>

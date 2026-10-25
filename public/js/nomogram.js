@@ -50,10 +50,12 @@ export function nomogram(svg, cfg, onChange) {
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.classList.add("nomo");
 
-  const a0 = A.f(A.min);
-  const c0 = C.f(C.min);
-  const m1 = (bottom - top) / (A.f(A.max) - a0);
-  const m2 = (bottom - top) / (C.f(C.max) - c0);
+  // An outer scale may span more paper than its ring can reach (lo, hi),
+  // so that two scales share one ruler.
+  const a0 = A.f(A.lo ?? A.min);
+  const c0 = C.f(C.lo ?? C.min);
+  const m1 = (bottom - top) / (A.f(A.hi ?? A.max) - a0);
+  const m2 = (bottom - top) / (C.f(C.hi ?? C.max) - c0);
 
   const yA = (v) => bottom - m1 * (A.f(v) - a0);
   const yC = (v) => bottom - m2 * (C.f(v) - c0);
@@ -136,9 +138,13 @@ export function nomogram(svg, cfg, onChange) {
     const ring = el("circle", { r: 11, class: "handle-ring" }, g);
     const dot = el("circle", { r: 3.5, class: "handle-dot" }, g);
 
+    // A scale may round its values its own way (s.snap); the ring still
+    // stays within min and max.
+    const clamp = (v) => Math.min(s.max, Math.max(s.min, v));
     const snap = (v) => {
+      if (s.snap) return clamp(s.snap(clamp(v)));
       const n = Math.round((v - s.min) / s.step);
-      return Math.min(s.max, Math.max(s.min, +(s.min + n * s.step).toFixed(6)));
+      return clamp(+(s.min + n * s.step).toFixed(6));
     };
     const fromY = (y) => {
       const yc = Math.min(bottom, Math.max(top, y));
@@ -175,13 +181,21 @@ export function nomogram(svg, cfg, onChange) {
     }
     g.addEventListener("keydown", (evt) => {
       const big = evt.shiftKey ? 10 : 1;
+      let dir = 0;
       let v = state[key];
-      if (evt.key === "ArrowUp" || evt.key === "ArrowRight") v += s.step * big;
-      else if (evt.key === "ArrowDown" || evt.key === "ArrowLeft") v -= s.step * big;
+      if (evt.key === "ArrowUp" || evt.key === "ArrowRight") dir = 1;
+      else if (evt.key === "ArrowDown" || evt.key === "ArrowLeft") dir = -1;
       else if (evt.key === "Home") v = s.min;
       else if (evt.key === "End") v = s.max;
       else return;
-      state[key] = snap(v);
+      // Step until the rounded value moves, so a coarse snap cannot stall.
+      const here = snap(state[key]);
+      let next = snap(v);
+      for (let i = 0; dir && i < 200 && next === here; i++) {
+        v += dir * s.step * big;
+        next = snap(v);
+      }
+      state[key] = next;
       update();
       evt.preventDefault();
     });
