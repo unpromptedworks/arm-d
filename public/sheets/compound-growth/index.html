@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 04: Compound growth · Index Line</title>
+<meta name="description" content="A working nomogram for compound interest, on which doubling the years squares the multiple, every doubling pair passes through one point, and the rule of 72 shows up as the gap between two rate scales.">
+<meta property="og:title" content="Sheet 04: Compound growth · Index Line">
+<meta property="og:description" content="A working nomogram for compound interest, on which doubling the years squares the multiple, every doubling pair passes through one point, and the rule of 72 shows up as the gap between two rate scales.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 04 of 04</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 04, Compound growth: <span>double the years and the multiple squares.</span></p>
+    <label class="hold"><input type="checkbox" id="hold"> Hold the multiple: keep the line through the same point on the middle scale</label>
+    <svg id="chart" aria-label="Compound growth nomogram: years on the left, annual rate on the right, growth multiple in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Compound growth</h1>
+    <p class="lede">How many times over a sum grows at a fixed annual rate, compounded once a year, from the number of years and the rate. Double the years and the multiple squares; the rule of 72 is the gap between two graduations of one scale.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Years</dt><dd id="r-n">10</dd></div>
+      <div><dt>Rate</dt><dd id="r-r">7.2 %</dd></div>
+      <div class="out"><dt>Multiple</dt><dd id="r-m">2.00×</dd></div>
+      <div><dt>Doubles every</dt><dd id="r-d">9.97 years</dd></div>
+    </dl>
+    <p class="small" id="r-note">The rule of 72 says 10.0 years (within half a percent); the continuous rate is 6.95 %. A sum of 1,000 becomes 2,004.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the number of years.</li>
+      <li>Set the right ring at the annual rate, on the outer graduation.</li>
+      <li>Read the multiple where the line crosses the middle scale: what each unit of money has become.</li>
+      <li>To see every way of doubling at once, put the line through 2, tick “Hold the multiple” and move either ring.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Read the upper half of the middle scale. On its left stand the powers of ten, crowding so close as they rise that 10,000 has no room for its label. On its right stand 2, 4, 16 and 256. They are evenly spaced, and each is the square of the one below it. One step between them is exactly what doubling the years does to the line: hold the rate, move the years ring from 10 to 20, or from 20 to 40, and the crossing climbs one step. So the chart prints a rule that a calculator’s answer hides: double the time and the multiple is squared. At 7.2 percent, 10 years makes 2.00, 20 years 4.02, and 40 years 16.1. The second ten years earn twice what the first ten did, and the last twenty earn four times what the first twenty did, without the rate changing at all.</p>
+    <p>Then look at the bottom of the same scale. From 1.01 to 2 takes more than half its length, and there 1.01, 1.02, 1.05 and 1.1 sit nearly where an ordinary logarithmic ruler would put 1, 2, 5 and 10 percent. Down here compounding is simple interest: the gain is years times rate, and the line just multiplies them. The two halves of one scale are the two faces of the formula, the one people expect and the one that surprises them, and the familiar one gets more than half the paper.</p>
+    <p>Now put the line through 2 and hold it. It turns about that one point, and every position it takes is a way of doubling: 2 percent for 35 years, 7.2 percent for 10, 24 percent for 3.2. On rulers where both years and rate were logarithmic, a pivot like this would mean years times rate is constant, and that constant would be a rule anyone could carry: divide it by the rate and get the doubling time. The years ruler is logarithmic. The rate ruler is not quite. Its ticks are placed by the logarithm of ln(1 + r), not of r, and above 10 percent they crowd visibly together.</p>
+    <p>The faint graduation on the inner side of the rate scale is the rate that ruler does measure: the continuously compounded rate, which is exactly logarithmic. On that graduation the rule is exact. Doubling time is 69.3 divided by the continuous rate, because 0.693 is the natural logarithm of 2. The rule of 72, which Luca Pacioli printed without explanation in 1494, uses the outer graduation instead, and the gap between the two graduations is its error. Find 7.85 on the outside: opposite it on the inside stands about 7.56, and 7.85 over 7.56 is 72 over 69.3. That is the one rate where the rule is exact. Below it the outer ticks sit closer to the inner ones and 72 overstates the time, by 3.4 percent at 1 percent interest. Above it the gap widens and 72 understates, by 5 percent at 20 percent and 9 percent at 30. So 72 is close to the exact constant for the rates people usually meet, around 6 to 10 percent, and it has a second merit a mental rule needs: it divides evenly by 2, 3, 4, 6, 8, 9 and 12.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">M = (1 + r)<sup>n</sup></span>, for <span class="f">n</span> years at annual rate <span class="f">r</span>, compounded yearly. Taking logarithms twice turns the power into a sum: <span class="f">log ln M = log n + log ln(1 + r)</span>. Those three terms are the three rulers. The outer two are equally weighted, so the middle scale stands halfway and reads the sum. The doubling time is <span class="f">ln 2 / ln(1 + r)</span>; the continuous rate is <span class="f">ρ = ln(1 + r)</span>, with <span class="f">M = e<sup>ρn</sup></span>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>“Rule of 72,” <a href="https://en.wikipedia.org/wiki/Rule_of_72">Wikipedia</a>. Pacioli’s <i>Summa de arithmetica</i> (Venice, 1494) as an early reference, given without derivation; 69.3 as exact for continuous compounding, since ln 2 is about 0.693; the rule as most accurate near 8 percent for annual compounding and less accurate at high rates; 72 as a convenient numerator for its divisors 1, 2, 3, 4, 6, 8, 9 and 12.</li>
+      <li>“Compound interest,” <a href="https://en.wikipedia.org/wiki/Compound_interest">Wikipedia</a>. The formula for annual compounding and its continuous limit.</li>
+      <li>The figures in the remarks (doubling times, 7.85 percent, the errors of the rule) are computed from the formula above; the readout computes the same ones live.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>04, Compound growth</dd>
+      <dt>Type</dt><dd>Three parallel scales, product form taken to logarithms twice, rate scale with a second graduation</dd>
+      <dt>Range</dt><dd>Years 1 to 50; rate 1 to 30 percent a year; multiple 1.01 to about 500,000</dd>
+      <dt>Drawn</dt><dd>27 October 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+
+const lg = Math.log10, ln = Math.log;
+const rho = (r) => ln(1 + r / 100);              // continuous rate, per year
+const thin = (s) => s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+const mult = (m) => (m < 1.1 ? m.toFixed(3) : m < 10 ? m.toFixed(2) : m < 1000 ? m.toPrecision(3) : thin(m.toFixed(0)));
+const label = (m) => (m >= 1000 ? thin(String(m)) : String(m));
+const yrs = (n) => (Math.abs(n - Math.round(n)) < 1e-6 ? String(Math.round(n)) : n.toFixed(1));
+
+const A = {
+  label: "Years", unit: "years", min: 1, max: 50, step: 1, value: 10, f: lg,
+  ticks: {
+    major: [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 30, 40, 50],
+    minor: [...range(1, 10, 0.5), ...range(10, 20, 1), ...range(20, 50, 2)],
+  },
+};
+const C = {
+  label: "Rate", unit: "% a year", min: 1, max: 30, step: 0.1, value: 7.2,
+  f: (r) => lg(rho(r)),
+  snap: (r) => (r < 10 ? Math.round(r * 10) / 10 : Math.round(r * 2) / 2),
+  ticks: {
+    major: [1, 1.5, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 30],
+    minor: [...range(1, 3, 0.1), ...range(3, 10, 0.5), ...range(10, 30, 1)],
+  },
+  // The same ruler, graduated in the continuously compounded rate.
+  inner: {
+    label: "continuous", to: (p) => 100 * (Math.exp(p / 100) - 1),
+    ticks: { major: [1, 2, 3, 5, 10, 15, 20, 25], minor: [1.5, 4, 6, 7, 8, 9, 12, 14, 16, 18, 22, 24, 26] },
+  },
+};
+// The squaring chain 2, 4, 16, 256 on the right; powers of ten on the left.
+const multiples = [1.01, 1.02, 1.03, 1.05, 1.1, 1.2, 1.5, 2, 3, 4, 16, 256];
+const multMinor = [1.04, 1.07, 1.15, 1.3, 1.4, 1.7, 2.5, 5, 6, 7, 8, 20, 30, 50, 200, 500, 2000, 5000, 20000, 50000, 200000];
+
+const hold = document.getElementById("hold");
+let last = { n: A.value, r: C.value, L: A.value * rho(C.value) };
+let chart = null;
+chart = nomogram(document.getElementById("chart"), {
+  width: 600, height: 840, bottomPad: 72,
+  A, C,
+  mids: [{
+    label: "Multiple", unit: "times", g: (m) => lg(ln(m)), alpha: 1, beta: 1, gamma: 0,
+    min: 1.0001, max: 1e7, side: "right", fmt: label,
+    ticks: { major: multiples, minor: multMinor },
+    inner: { to: (m) => m, fmt: label, ticks: { major: [10, 100, 1000, 100000], minor: [10000] } },
+  }],
+}, show);
+
+function show(n, r) {
+  // Holding the multiple: whichever ring moved, the other follows so
+  // that n ln(1 + r) stays the same.
+  if (hold?.checked && chart && (n !== last.n || r !== last.r)) {
+    let nn = n, nr = r;
+    if (n !== last.n) {
+      nr = Math.min(C.max, Math.max(C.min, 100 * (Math.exp(last.L / n) - 1)));
+      nn = last.L / rho(nr);
+    } else {
+      nn = Math.min(A.max, Math.max(A.min, last.L / rho(r)));
+      nr = 100 * (Math.exp(last.L / nn) - 1);
+    }
+    last = { n: nn, r: nr, L: last.L };
+    chart.set(nn, nr);
+    return;
+  }
+  last = { n, r, L: n * rho(r) };
+  const M = Math.exp(last.L);
+  const dbl = ln(2) / rho(r);
+  document.getElementById("r-n").textContent = yrs(n);
+  document.getElementById("r-r").textContent = `${+r.toFixed(2)} %`;
+  document.getElementById("r-m").textContent = `${mult(M)}×`;
+  document.getElementById("r-d").textContent = `${dbl.toPrecision(3)} years`;
+  const err = (72 / r - dbl) / dbl * 100;
+  const off = Math.abs(err) < 0.5 ? "within half a percent" : `${Math.abs(err).toFixed(1)} % ${err > 0 ? "long" : "short"}`;
+  document.getElementById("r-note").textContent =
+    `The rule of 72 says ${(72 / r).toPrecision(3)} years (${off}); the continuous rate is ${(100 * rho(r)).toFixed(2)} %. A sum of 1,000 becomes ${thin((1000 * M).toFixed(0))}.`;
+}
+</script>
+</body>
+</html>
