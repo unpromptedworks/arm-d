@@ -98,6 +98,32 @@ export function nomogram(svg, cfg, onChange) {
       }, g);
       t.textContent = (s.fmt || String)(v);
     }
+    // A scale may carry a second graduation on its other side (s.inner),
+    // for another quantity that is a function of this one: inner.to maps
+    // an inner value to this scale's value.
+    if (s.inner) {
+      const t = s.inner;
+      for (const [vals, len, cls] of [[t.ticks.minor, 5, "minor"], [t.ticks.major, 10, "major"]]) {
+        for (const v of vals) {
+          const y = yOf(t.to(v));
+          if (!inside(y)) continue;
+          el("line", { x1: x, x2: x - dir * len, y1: y, y2: y, class: `tick inner ${cls}` }, g);
+          if (cls === "minor") continue;
+          const lab = el("text", {
+            x: x - dir * 14, y: y + 4, class: "tick-label inner",
+            "text-anchor": side === "left" ? "start" : "end",
+          }, g);
+          lab.textContent = (t.fmt || String)(v);
+        }
+      }
+      if (t.label) {
+        const sub = el("text", {
+          x: x - dir * 6, y: bottom + 54, class: "scale-unit inner",
+          "text-anchor": side === "left" ? "start" : "end",
+        }, g);
+        sub.textContent = t.label;
+      }
+    }
     // Paired middle scales set their names to one side so they do not collide.
     const anchor = s.nameAnchor || "middle";
     const nx = x + (anchor === "end" ? 4 : anchor === "start" ? -4 : 0);
