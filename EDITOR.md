@@ -25,3 +25,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: The new page "Thin lens".
 - Stopped: At the end of the page.
 - Question: Are nomograms still common in any fields or application?
+
+## Pull request #5, 2026-10-27
+
+- Read: Compound growth page
+- Stopped: Full page
+- Question: Are the scales of nomograms always parallel?
