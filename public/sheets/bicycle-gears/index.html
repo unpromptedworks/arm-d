@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 05: Bicycle gears · Index Line</title>
+<meta name="description" content="A working Z chart for bicycle gearing: two parallel tooth scales and a diagonal that runs from zero to infinity, on which every chainring and sprocket pair with the same ratio passes through one point.">
+<meta property="og:title" content="Sheet 05: Bicycle gears · Index Line">
+<meta property="og:description" content="A working Z chart for bicycle gearing: two parallel tooth scales and a diagonal that runs from zero to infinity, on which every chainring and sprocket pair with the same ratio passes through one point.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 05 of 05</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 05, Bicycle gears: <span>the first sheet whose scales are not all parallel.</span></p>
+    <svg id="chart" aria-label="Z chart for bicycle gearing: chainring teeth on the left rising from the bottom corner, sprocket teeth on the right falling from the top corner, gear ratio on the diagonal between them"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves five teeth. Faint lines are other pairs that make the same gear.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Bicycle gears</h1>
+    <p class="lede">The gear ratio of a chainring and a rear sprocket, and how far one turn of the pedals carries the bicycle. Two scales stand parallel; the third runs corner to corner, from zero to infinity, and every pair of rings that makes the same gear crosses it at one point.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Chainring</dt><dd id="r-a">48</dd></div>
+      <div><dt>Sprocket</dt><dd id="r-c">16</dd></div>
+      <div class="out"><dt>Ratio</dt><dd id="r-k">3.00</dd></div>
+      <div><dt>Per pedal turn</dt><dd id="r-d">6.31 m</dd></div>
+    </dl>
+    <p class="small" id="r-note">79 gear inches; 34.1 km/h at 90 pedal turns a minute. The same gear: 30×10, 33×11, 36×12, 39×13, 42×14, 45×15, 51×17, 54×18.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the number of teeth on the chainring, the toothed ring the pedals turn.</li>
+      <li>Set the right ring at the number of teeth on the rear sprocket. This scale counts down the page: few teeth at the top.</li>
+      <li>Read the gear ratio where the line crosses the diagonal, on its upper side, and the distance the bicycle travels for one turn of the pedals on its lower side.</li>
+      <li>Watch the faint lines. Each is another chainring and sprocket in range that make exactly the same gear; they all pass through the same point on the diagonal.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>The sheets before this one stand three scales side by side, and a ratio like this one would have gone on them as a sum of logarithms. Nomograms need not be drawn that way. This one keeps the teeth on plain rulers, one equal space for every tooth, and stands the answer on a diagonal between them. Draftsmen call the shape a Z chart, or an N chart, after the letter its three scales make. It works because the two tooth scales are parallel: the index line cuts two similar triangles off them, one at each corner, and the diagonal is divided between them in the ratio of their sides, which is the ratio of the teeth.</p>
+    <p>That proof fixes where zero must stand. Each tooth ruler has to start at the corner where it meets the diagonal: the chainring scale at the bottom left, the sprocket scale at the top right. Look at the faint stretches below 22 teeth on the left and above 10 on the right. They are paper a parallel chart would have trimmed off, and here it cannot, because sliding a scale away from its corner would break the triangles. The diagonal pays for it differently. With nothing at one end and no sprocket at the other, it runs from a ratio of 0 to a ratio of infinity, both printed at the corners, and every gear on this chart fits in half its length.</p>
+    <p>Now set 48 and 16. The line crosses the diagonal at 3, and eight faint lines cross it there too: 30 and 10, 39 and 13, 54 and 18. A calculator would make nine divisions and print 3.00 nine times; the chart shows one point with nine lines through it. A gear is a point, not a pair of numbers, and a ratio in lowest terms is the slope of a line turning about it. Set 50 and 17 and there are no faint lines, because 50 and 17 share no factor and 100 teeth is off the scale. Across the whole chart, 945 pairs of teeth make only 726 different gears. The same thing happens on a real bicycle with two or three chainrings: a triple with eight sprockets advertises 24 gears and usually has 16 to 18 distinct ones.</p>
+    <p>Hold the chainring at 50 and step the sprocket one tooth at a time. Every tooth is the same length on the right-hand scale, but the crossing jumps far at the top of it and creeps at the bottom: from 11 teeth to 12 changes the gear by 9 percent, from 27 to 28 by under 4. That is why cassettes are built with one-tooth gaps between their small sprockets and wider gaps between their large ones. Here the chart is honest only halfway, and it is worth seeing where. The diagonal is not a logarithmic scale, so its lengths are not percentages. From 13 teeth to 15 is a 15.4 percent change; from 20 to 23 is 15.0 percent, slightly less, and yet it draws the longer jump. The Z chart prints the ratio itself, plainly; to see the steps as a rider feels them, as shares, the ratio has to go back onto logarithmic parallel scales. Each form shows one thing and hides another.</p>
+
+    <h2>Formula</h2>
+    <p>Gear ratio <span class="f">k = a / c</span>, for <span class="f">a</span> chainring teeth and <span class="f">c</span> sprocket teeth. Distance per pedal turn, or metres of development, is <span class="f">D = k × π d</span>; for a road wheel about 670 mm across with its tyre, one wheel turn is 2.105 m. Gear inches are <span class="f">k × d</span> in inches, here 26.4; speed in km/h at 90 pedal turns a minute is <span class="f">D × 5.4</span>.</p>
+    <p>Construction: with the chainring scale at height <span class="f">m₁a</span> above the bottom-left corner and the sprocket scale at depth <span class="f">m₂c</span> below the top-right corner, the line through them crosses the diagonal at the fraction <span class="f">t = k / (k + m₂/m₁)</span> of its length from the bottom-left corner. Here <span class="f">m₂/m₁ = 56/36</span>, the ratio of the two rulers’ full lengths in teeth, so 1:1 sits at 0.39 of the way and 3:1 at 0.66. The ratio and distance graduations are placed by that fraction.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>“Bicycle gearing,” <a href="https://en.wikipedia.org/wiki/Bicycle_gearing">Wikipedia</a>. Gear inches and metres of development as the wheel’s diameter and circumference times chainring teeth over sprocket teeth; road wheels on 700C rims as about 670 mm in diameter; gear steps measured in percent, with cassettes having small absolute differences between the smaller sprockets, and the example of 13 to 15 teeth (15.4 %) against 20 to 23 (15 %); duplicate and near-duplicate ratios with two derailleurs, and a triple with eight sprockets giving 24 advertised and typically 16 to 18 distinct ratios.</li>
+      <li>Ron Doerfler, “The Art of Nomography II: Designing with Determinants,” <a href="https://deadreckonings.com/2008/01/09/the-art-of-nomography-ii-designing-with-determinants/">Dead Reckonings</a>, 9 January 2008. The Z chart for division, with outer scales of different scaling factors.</li>
+      <li>The other figures (945 pairs and 726 ratios for 22 to 56 by 10 to 36 teeth, the percent steps, the jump lengths and the 2.105 m circumference from π × 0.670 m) are computed from the formulas above.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>05, Bicycle gears</dd>
+      <dt>Type</dt><dd>Z chart: two parallel linear scales and a diagonal, quotient form, diagonal graduated twice</dd>
+      <dt>Range</dt><dd>Chainring 22 to 56 teeth; sprocket 10 to 36 teeth; ratio 0.61 to 5.6</dd>
+      <dt>Drawn</dt><dd>31 October 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { zchart } from "/js/zchart.js";
+import { range } from "/js/nomogram.js";
+
+const WHEEL = Math.PI * 0.670;      // metres per wheel turn
+const lin = (v) => v, inv = (u) => u;
+const A = {
+  label: "Chainring", unit: "teeth", min: 22, max: 56, step: 1, value: 48, f: lin, inv,
+  ticks: { major: range(24, 56, 4), minor: range(22, 56, 1) },
+};
+const C = {
+  label: "Sprocket", unit: "teeth", min: 10, max: 36, step: 1, value: 16, f: lin, inv,
+  ticks: { major: range(10, 36, 2), minor: range(10, 36, 1) },
+};
+const D = {
+  label: "Gear ratio", nameAt: 0.38,
+  fmt: (k) => String(k),
+  ticks: {
+    major: [0.6, 0.8, 1, 1.2, 1.5, 2, 2.5, 3, 4, 5],
+    minor: [...range(0.6, 2, 0.1), ...range(2, 3, 0.25), ...range(3, 5.5, 0.5)],
+  },
+  inner: {
+    label: "metres per pedal turn", to: (m) => m / WHEEL, fmt: String,
+    ticks: { major: [2, 3, 4, 5, 6, 7, 8, 10], minor: [...range(1.5, 8, 0.5), 9, 11] },
+  },
+};
+const same = (a, c) => {
+  const out = [];
+  for (let x = A.min; x <= A.max; x++)
+    for (let y = C.min; y <= C.max; y++)
+      if (x * c === a * y && x !== a) out.push([x, y]);
+  return out;
+};
+zchart(document.getElementById("chart"), { width: 600, height: 880, top: 70, bottomPad: 90, xA: 120, xC: 480, A, C, D, same }, (a, c, k, pairs) => {
+  const dev = k * WHEEL;
+  document.getElementById("r-a").textContent = a;
+  document.getElementById("r-c").textContent = c;
+  document.getElementById("r-k").textContent = k.toFixed(2);
+  document.getElementById("r-d").textContent = `${dev.toFixed(2)} m`;
+  const list = pairs.length
+    ? `The same gear: ${pairs.map(([x, y]) => `${x}×${y}`).join(", ")}.`
+    : "No other pair on the chart makes exactly this gear.";
+  document.getElementById("r-note").textContent =
+    `${Math.round(k * 26.38)} gear inches; ${(dev * 5.4).toFixed(1)} km/h at 90 pedal turns a minute. ${list}`;
+});
+</script>
+</body>
+</html>

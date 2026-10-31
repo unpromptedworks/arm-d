@@ -184,3 +184,11 @@ footer.foot {
   display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; justify-content: space-between;
   font: 500 0.9rem/1.4 var(--cond); letter-spacing: 0.04em; color: var(--ink-soft);
 }
+
+/* Z chart: the stretch of a ruler outside its working range, and the
+   other lines through the same point. */
+.nomo .axis.faint { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 3 4; }
+.nomo .tick-label.faint { fill: var(--ink-soft); }
+.nomo .fan-line { stroke: var(--red); stroke-width: 1; opacity: 0.35; }
+.nomo .diagonal .scale-unit { font-size: 14px; }
+@media (max-width: 600px) { .nomo .diagonal .scale-unit { font-size: 19px; } }
