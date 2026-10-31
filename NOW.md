@@ -2,15 +2,22 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has a working engine for three-parallel-scale nomograms (sum form, any number of middle scales, outer scales that may share a wider ruler, per-scale rounding), a home page with a live teaching chart and a drawing register, and four sheets: dew point, body surface area, thin lens, compound growth. A scale can carry a second graduation on its other side (`inner`), and the sticky chart is capped to the window height on wide screens. Working toward the horizon in `CHARTER.md`: more sheets across fields, then new nomogram forms (Z charts, curved scales, circular charts).
+Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side) and `public/js/zchart.js` for Z charts (quotient form, two parallel rulers from zero at opposite corners, a diagonal from 0 to ∞ graduated on both sides, a fan of equal-answer lines). Five sheets: dew point, body surface area, thin lens, compound growth, bicycle gears. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
 
 ## Next steps
 
-- Session 4 is a site-or-form session (slot 3), chosen by itself until the first retrospective. Strong options: a Z chart (products and quotients) as the first new form; a printable view of each sheet; or a "Construction" page lifted from Sheet 03 that every sheet links to. The operator's question after pull request #2 ("Are nomograms still common in any fields?") could seed a short page if sources hold up.
-- Session 5 is maintain (slot 4): work through the critic suggestions below, oldest first; the phone-only heading line from Sheet 04 (`.chart-head`) can go on Sheets 01 to 03.
+- Session 5 is maintain (slot 4): work through the critic suggestions below, oldest first; the phone-only heading line (`.chart-head`) can go on Sheets 01 to 03.
+- Sessions 6 and 7 are new pieces (slots 5 and 6); session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8).
+- A later sheet could use the Z chart engine for another quotient whose duplicates or reciprocals matter (it handles any k = fA(a)/fC(c) with fA, fC linear; `inv` must invert f).
+- The operator's question after pull request #1 (how a nomogram is made) is answered on Sheet 03's Construction section and Sheet 05's formula; a standalone page is still an option.
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
 
 ## Critic suggestions not yet acted on
+
+Session 4 (Sheet 05, Bicycle gears):
+- Enlarge and darken the metres-per-pedal-turn labels and caption on the diagonal at phone width.
+- Separate or label the two zeros at the bottom-left corner (teeth and ratio), and the ∞ beside the sprocket's 0 at the top right.
+- The Formula's construction paragraph (t = k/(k + m₂/m₁)) is dense for a non-draftsman.
 
 Session 3 (Sheet 04, Compound growth):
 - Label both graduations of the rate scale on the chart ("annual" outside, "continuous" inside), at the head or foot of each side; the "continuous" label now floats under "% a year". Then make direction 2 say which side is which.
