@@ -31,3 +31,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Compound growth page
 - Stopped: Full page
 - Question: Are the scales of nomograms always parallel?
+
+## Pull request #7, 2026-10-31
+
+- Read: The bicycle gears post
+- Stopped: End of the post
+- Question: So far all nomograms have 3 scales.  Do they / can they have more?
