@@ -37,3 +37,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: The bicycle gears post
 - Stopped: End of the post
 - Question: So far all nomograms have 3 scales.  Do they / can they have more?
+
+## Pull request #9, 2026-11-03
+
+- Read: Home page only (no new content).
+- Stopped: End of page
+- Question: Can nomograms extend into higher dimensions?
