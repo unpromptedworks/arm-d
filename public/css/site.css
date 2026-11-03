@@ -138,6 +138,7 @@ code, .f { font-family: var(--cond); font-weight: 500; font-size: 1.08em; letter
   .nomo .tick-label.inner { font-size: 18px; }
   .nomo .scale-name { font-size: 21px; letter-spacing: 0.04em; }
   .nomo .handle-ring { r: 15px; }
+  .nomo .tick-label.sparse { display: none; }
 }
 
 /* Readout under the title. */
@@ -175,8 +176,17 @@ code, .f { font-family: var(--cond); font-weight: 500; font-size: 1.08em; letter
 }
 
 .nb { display: inline-block; }
-.home-head { display: grid; gap: 2rem; padding: 2rem 0 1rem; }
-@media (min-width: 960px) { .home-head { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); align-items: start; } }
+/* On phones the addition chart comes between the lede and the claim, so
+   the first screen has a picture; on wide screens it stands beside both. */
+.home-head { display: grid; gap: 1.5rem; padding: 2rem 0 1rem; }
+.home-intro .lede { margin-bottom: 0; }
+@media (max-width: 959px) { .home-head .chart { max-width: 26rem; order: 1; } .home-claim { order: 2; } }
+@media (min-width: 960px) {
+  .home-head { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); grid-template-rows: auto 1fr; column-gap: 2rem; row-gap: 0.85rem; align-items: start; }
+  .home-head .chart { grid-column: 2; grid-row: 1 / span 2; }
+}
+/* A chart whose scale names are algebra keeps their lower case. */
+.nomo.lettered .scale-name { text-transform: none; letter-spacing: 0.02em; }
 
 footer.foot {
   margin-top: 3rem; padding: 0.9rem clamp(1rem, 3vw, 2rem) 1.4rem;

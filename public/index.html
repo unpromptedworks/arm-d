@@ -20,13 +20,15 @@
 </header>
 <main>
 <section class="home-head">
-  <div>
+  <div class="home-intro">
     <h1>Lay a line across two scales. <span class="nb">Read the third.</span></h1>
     <p class="lede">A nomogram is a chart that computes. Each scale stands for one quantity in a formula, and any straight line that crosses them all lands on values that satisfy it. For about seventy-five years they did quick, accurate arithmetic in engineering offices, pharmacies and aircraft cockpits. Then pocket calculators arrived.</p>
+  </div>
+  <div class="home-claim">
     <p>This site draws them again, one formula to a sheet, and works them in the browser: drag a ring and the red line, the index line, moves with it. The claim of the site is that the old instrument is still the better way to <em>understand</em> a formula, if not to compute one. A calculator gives the answer and hides the shape. A nomogram prints the shape. Where its ticks crowd together the formula is slack; where they spread apart it is sensitive; where two scales stand tells you how the inputs trade off. Each sheet comes with remarks on what its scales show.</p>
   </div>
   <figure class="chart">
-    <svg id="adder" aria-label="A nomogram for adding two numbers"></svg>
+    <svg id="adder" class="lettered" aria-label="A nomogram for adding two numbers"></svg>
     <figcaption>Sheet 00: addition. <span id="sum">3 + 5 = 8</span>. The middle scale is drawn at half the spacing of the outer two, which is all it takes for a straight line to add.</figcaption>
   </figure>
 </section>
