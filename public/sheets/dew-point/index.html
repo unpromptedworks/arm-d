@@ -21,6 +21,7 @@
 <main>
 <article class="sheet">
   <figure class="chart">
+    <p class="chart-head">Sheet 01, Dew point: <span>one degree per five percent, until the air turns dry.</span></p>
     <svg id="chart" aria-label="Dew point nomogram: air temperature on the left, relative humidity on the right, dew point in the middle"></svg>
     <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps.</figcaption>
   </figure>
@@ -47,7 +48,7 @@
     <h2>Remarks</h2>
     <p>Look at the spacing before you look at the answer. The humidity scale is logarithmic: the stretch from 10 to 30 percent takes nearly as much paper as the stretch from 30 to 100. Paper is sensitivity. Where the ticks spread apart, a small change in humidity moves the line a long way, and the dew point with it.</p>
     <p>So there are two kinds of air on this chart. At 20 °C, letting the humidity fall from 100 to 50 percent lowers the dew point from 20.0 to 9.3 °C, close to one degree for every five percent. That is the rule of thumb Mark Lawrence set out in 2005, noting that it did not seem to be widely known among meteorologists, and the chart shows why it holds there: above 50 percent the ticks are nearly even. Below 50 the ticks open out. The next forty points, from 50 down to 10 percent, take the dew point from 9.3 to −12.6 °C, almost three degrees for every five percent. In dry air the rule of thumb is wrong by a factor of nearly three, and the chart says so before you compute anything.</p>
-    <p>Look too at the middle scale. It is the temperature scale again, shrunk and slid down. That is not a drawing convenience. The dew point is the temperature at which the humidity term vanishes, so it must be measured with the same ruler as the air. Set the right ring at 100 percent and the line crosses the middle at the temperature you started from.</p>
+    <p>Look too at the middle scale. It is the air temperature scale again, drawn at three fifths the size and hung from the same top tick, so that 45 on the middle lines up with 45 on the air. Below that it runs on further down, to −35, because dry air can have a dew point well below any air temperature on the sheet. That is not a drawing convenience. The dew point is the temperature at which the humidity term vanishes, so it must be measured with the same ruler as the air. Set the right ring at 100 percent and the line crosses the middle at the temperature you started from.</p>
     <p class="small">Below 0 °C the formula gives the dew point over liquid water, not the frost point over ice.</p>
 
     <h2>Formula</h2>

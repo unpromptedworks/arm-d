@@ -21,8 +21,9 @@
 <main>
 <article class="sheet">
   <figure class="chart">
+    <p class="chart-head">Sheet 02, Body surface area: <span>two formulas, read with one line.</span></p>
     <svg id="chart" aria-label="Body surface area nomogram: weight on the left, height on the right, two surface area scales between them"></svg>
-    <figcaption>Two middle scales, back to back: Shuter and Aslani 2000 reads to the left of the pair, Du Bois 1916 to the right. Drag a red ring, or tab to it and use the arrow keys.</figcaption>
+    <figcaption>Two middle scales, back to back: Shuter–Aslani 2000 reads to the left of the pair, Du Bois 1916 to the right. Drag a red ring, or tab to it and use the arrow keys.</figcaption>
   </figure>
 
   <div class="text">
@@ -48,10 +49,10 @@
     <h2>Remarks</h2>
     <p>In 1916 D. Du Bois and E. F. Du Bois fitted a formula for skin area to height and weight. It is still the standard one, used, in the words of a 2000 reappraisal, “widely to normalise physiological parameters.” The same reappraisal pointed out what few of its users know: the fit rests on nine subjects, measured by encasing them in moulds. B. Shuter and A. Aslani refitted the model to all forty-two subjects the original paper reported, using measurements of body parts that Du Bois and Du Bois had left out of their fit, and got different constants.</p>
     <p>A chart of this kind is a good place to compare them, because on it a formula has a position. Each formula is a power law, a constant times weight to one power and height to another. Taking logarithms turns that into a sum, and a sum is what three parallel scales compute. Where the answer scale stands between the outer two is fixed by nothing but the ratio of the two powers. Du Bois’s 0.425 to 0.725 puts its scale at one place. Shuter and Aslani’s 0.441 to 0.655 puts theirs a little to the left. The thin gap between the two lines is the whole of the disagreement about how weight and height trade off, drawn to scale.</p>
-    <p>It is a small gap. Anywhere on this sheet the two answers differ by at most about 4 percent, a figure reached only in the extreme corner, and over most of it by one to three. The disagreement has a direction, though. The two agree along a band of stocky builds, from about 65 kg at 140 cm to 150 kg at 168 cm. Away from that band, toward the tall and light, the refit gives less skin than Du Bois, and the gap is widest at the tall, light corner of the chart. Lower the left ring, raise the right one, and watch the difference grow.</p>
+    <p>It is a small gap. Over about three quarters of the weights and heights on this sheet the two answers differ by less than 2 percent, and nowhere by more than about 4, a figure reached only in the extreme corner. The disagreement has a direction, though. The two agree along a band of stocky builds, from about 68 kg at 140 cm to 150 kg at 168 cm. Away from that band, toward the tall and light, the refit gives less skin than Du Bois, and the gap is widest at the tall, light corner of the chart. Lower the left ring, raise the right one, and watch the difference grow.</p>
 
     <h2>Formulas</h2>
-    <p>Du Bois: <span class="f">A = 0.007184 × W<sup>0.425</sup> × H<sup>0.725</sup></span>. Shuter and Aslani: <span class="f">A = 0.00949 × W<sup>0.441</sup> × H<sup>0.655</sup></span>. A in square metres, W in kilograms, H in centimetres. Shuter and Aslani give their constant as 94.9 for an area in square centimetres. The scales are <span class="f">log W</span>, <span class="f">log H</span>, and <span class="f">log A</span>.</p>
+    <p>Du Bois: <span class="f">A = 0.007184 × W<sup>0.425</sup> × H<sup>0.725</sup></span>. Shuter and Aslani: <span class="f">A = 0.00949 × W<sup>0.441</sup> × H<sup>0.655</sup></span>. A in square metres, W in kilograms, H in centimetres. Shuter and Aslani give their constant as 94.9 for an area in square centimetres. The scales are <span class="f">log W</span>, <span class="f">log H</span>, and <span class="f">log A</span>. The height ruler’s 140 to 210 cm fill only the middle seven tenths of the drawing’s height. Drawn full length, it would push the pair of answer scales toward weight and leave the right of the drawing empty. Change the length of either ruler and the pair moves along the line, but the two answer scales keep their order: Shuter and Aslani’s always stands on the weight side.</p>
 
     <h2>Sources</h2>
     <ul class="sources">
@@ -79,10 +80,13 @@ const lg = Math.log10;
 const D = (w, h) => 0.007184 * w ** 0.425 * h ** 0.725;
 const S = (w, h) => 0.00949 * w ** 0.441 * h ** 0.655;
 const areaTicks = { major: range(1.0, 3.0, 0.1), minor: range(1.0, 3.0, 0.02) };
+// At phone width the paired scales are close and the figures large, so
+// one of the pair drops every other label where the scale is tight.
+const areaTicksSparse = { ...areaTicks, sparse: [2.1, 2.3, 2.5, 2.7, 2.9] };
 const f1 = (v) => v.toFixed(1);
 
 nomogram(document.getElementById("chart"), {
-  width: 640, height: 800, xA: 90, xC: 560, top: 70,
+  width: 640, height: 800, xA: 90, xC: 560, top: 92,
   A: {
     label: "Weight", unit: "kg", min: 30, max: 150, step: 1, value: 70, f: lg,
     ticks: {
@@ -90,15 +94,21 @@ nomogram(document.getElementById("chart"), {
       minor: [...range(30, 60, 1), ...range(60, 150, 2)],
     },
   },
+  // The height ruler is drawn shorter than the drawing, its ticks filling
+  // the middle seven tenths, so the pair of answer scales stands nearer
+  // the middle instead of close to weight. (The ruler spans 1.5^(1/0.7).)
   C: {
     label: "Height", unit: "cm", min: 140, max: 210, step: 1, value: 175, f: lg,
-    ticks: { major: range(140, 210, 10), minor: range(140, 210, 1) },
+    lo: 140 / 1.5 ** (3 / 14), hi: 210 * 1.5 ** (3 / 14), nameAtEnds: true,
+    ticks: { major: range(140, 210, 10), minor: range(140, 210, 2) },
   },
   mids: [
-    { label: "Shuter", g: lg, alpha: 0.441, beta: 0.655, gamma: lg(0.00949),
-      min: 0.5, max: 4, side: "left", nameAnchor: "end", nameDy: -20, ticks: areaTicks, fmt: f1 },
-    { label: "Du Bois", unit: "m²", g: lg, alpha: 0.425, beta: 0.725, gamma: lg(0.007184),
-      min: 0.5, max: 4, side: "right", nameAnchor: "start", ticks: areaTicks, fmt: f1 },
+    { label: "Shuter–Aslani 2000", name: ["Shuter–Aslani", "2000"], g: lg,
+      alpha: 0.441, beta: 0.655, gamma: lg(0.00949),
+      min: 0.5, max: 4, side: "left", nameAnchor: "end", nameDx: -8, ticks: areaTicksSparse, fmt: f1 },
+    { label: "Du Bois 1916", name: ["Du Bois", "1916"], unit: "m²", g: lg,
+      alpha: 0.425, beta: 0.725, gamma: lg(0.007184),
+      min: 0.5, max: 4, side: "right", nameAnchor: "start", nameDx: 8, ticks: areaTicks, fmt: f1 },
   ],
 }, (w, h, [s, d]) => {
   document.getElementById("r-w").textContent = `${w} kg`;

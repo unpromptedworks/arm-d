@@ -93,7 +93,9 @@ export function nomogram(svg, cfg, onChange) {
       if (!inside(y)) continue;
       el("line", { x1: x, x2: x + dir * 12, y1: y, y2: y, class: "tick major" }, g);
       const t = el("text", {
-        x: x + dir * 16, y: y + 4.5, class: "tick-label",
+        // Labels listed in s.ticks.sparse are dropped at phone width.
+        x: x + dir * 16, y: y + 4.5,
+        class: s.ticks.sparse?.includes(v) ? "tick-label sparse" : "tick-label",
         "text-anchor": side === "left" ? "end" : "start",
       }, g);
       t.textContent = (s.fmt || String)(v);
@@ -125,12 +127,21 @@ export function nomogram(svg, cfg, onChange) {
       }
     }
     // Paired middle scales set their names to one side so they do not collide.
+    // A name may run to more than one line (s.name, an array); the last line
+    // sits where a one-line name would. A scale whose ticks fill only part of
+    // the drawing may hang its name and unit at its own ends (s.nameAtEnds).
     const anchor = s.nameAnchor || "middle";
-    const nx = x + (anchor === "end" ? 4 : anchor === "start" ? -4 : 0);
-    const head = el("text", { x: nx, y: top - 22 + (s.nameDy || 0), class: "scale-name", "text-anchor": anchor }, g);
-    head.textContent = s.label;
+    const nx = x + (anchor === "end" ? 4 : anchor === "start" ? -4 : 0) + (s.nameDx || 0);
+    const headY = (s.nameAtEnds ? Math.min(...ys) : top) - 22 + (s.nameDy || 0);
+    const footY = (s.nameAtEnds ? Math.max(...ys) : bottom) + 30;
+    const lines = s.name || [s.label];
+    const head = el("text", { x: nx, y: headY, class: "scale-name", "text-anchor": anchor }, g);
+    lines.forEach((text, i) => {
+      const span = el("tspan", { x: nx, dy: i ? "1.15em" : `${-(lines.length - 1) * 1.15}em` }, head);
+      span.textContent = text;
+    });
     if (s.unit) {
-      const unit = el("text", { x: nx, y: bottom + 30, class: "scale-unit", "text-anchor": anchor }, g);
+      const unit = el("text", { x: nx, y: footY, class: "scale-unit", "text-anchor": anchor }, g);
       unit.textContent = s.unit;
     }
     return g;
