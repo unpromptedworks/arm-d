@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 06: Range of a light · Index Line</title>
+<meta name="description" content="A working nomogram for how far off a lighthouse first shows above the horizon, from the height of the light and the height of your eye. The heights add as square roots, and the chart cannot tell the eye from the light.">
+<meta property="og:title" content="Sheet 06: Range of a light · Index Line">
+<meta property="og:description" content="A working nomogram for how far off a lighthouse first shows above the horizon, from the height of the light and the height of your eye. The heights add as square roots, and the chart cannot tell the eye from the light.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 06 of 06</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 06, Range of a light: <span>the heights add as square roots.</span></p>
+    <label class="hold"><input type="checkbox" id="hold"> Hold the range: keep the line through the same distance while you move either ring</label>
+    <svg id="chart" aria-label="Range of a light nomogram: height of eye on the left, height of the light on the right, distance in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Range of a light</h1>
+    <p class="lede">How far off a light first shows above the sea horizon, from the height of the light and the height of your eye. The two heights do not add; their square roots do, and the chart prints them that way.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Eye</dt><dd id="r-h">3 m</dd></div>
+      <div><dt>Light</dt><dd id="r-l">40 m</dd></div>
+      <div class="out"><dt>Range</dt><dd id="r-d">17.1 nmi</dd></div>
+      <div><dt>In kilometres</dt><dd id="r-km">31.6 km</dd></div>
+    </dl>
+    <p class="small" id="r-note">Your horizon is 3.7 nautical miles off and the light’s is 13.4; the line of sight grazes the sea between them. Adding the heights first, 43 m, would give 13.9.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the height of your eye above the sea, in metres.</li>
+      <li>Set the right ring at the height of the light above the sea, as the chart or light list gives it.</li>
+      <li>Read the distance where the line crosses the middle scale, in nautical miles on the right and kilometres on the left. Closer than that, the light is above your horizon; farther, it is below.</li>
+      <li>To see every pair of heights that just see each other at one distance, tick “Hold the range” and move either ring.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Look at the two height rulers first. They are not evenly divided: 25 metres stands halfway up and 1 metre a tenth of the way, because each ruler is graduated by the square root of the height. The first metre above the water takes as much paper as the stretch from 1 to 4, and the last metre, from 99 to 100, takes almost none. That is what height buys. Lifting your eye from the water to 1 metre puts the horizon 2.1 nautical miles off; lifting it from 99 to 100 metres adds a tenth of a mile. A light 40 metres high has a horizon 13.4 miles away. Doubling the tower to 80 metres adds only 5.5 miles, and to double the 13.4 the tower would have to stand four times as high, at 160.</p>
+    <p>Then look at the middle scale. It is evenly divided, the only ruler on the sheet that is, because what adds on this chart is distance. Your horizon is one distance and the light’s horizon is another, and the line of sight that just clears the curve of the sea runs from one to the other, touching the water once between them. So the chart takes the square root of each height separately and adds the results. Leave the light at 40 and the eye at 3 and the line reads 17.1 miles. Now move the eye to 0 and the light to 43, as if the heights could be pooled: the line falls to 13.9. Pooling them puts the whole height at one end and none at the other, and the square root of a sum is always less than the sum of the square roots.</p>
+    <p>The two outer rulers are the same ruler, printed twice, and the middle scale stands exactly halfway between them. Swap the rings, eye to 40 and light to 3, and the line is the mirror image of itself and reads the same 17.1. The formula cannot tell an eye from a light: a keeper 40 metres up would see a lamp held 3 metres above the deck at the same distance at which the deck sees the lighthouse. Nothing in the drawing says which end is which except the names.</p>
+    <p>Now set the line through 20 miles and hold it. It turns about that point, and every position is a pair of heights that just see each other at 20 miles. With your eye at the water the light needs 89 metres; with your eye at 1 metre, 71; at 4 metres, 55; at 16, 30. The first metre of your height saves 18 metres of tower, and the twelve metres from 4 to 16 save only 25. Because the two rulers are alike, a step of one ruler’s paper on the left is always paid for by the same step on the right, and the crowding does the rest.</p>
+    <p>The same crowding explains an old way of judging distance from a light at night. Brightness is no guide, as the <i>American Practical Navigator</i> warns, but a light just at the horizon is a measurement: on calm water you can raise and lower your eye to make it show and dip, and the chart then says how far off it is. Low down, the eye ruler is wide open. Sitting at 2.5 metres and standing at 4, a small boat’s crew span 16.7 to 17.6 miles on this light, nearly a mile between them. On a bridge 25 metres up the same 1.5 metres of standing moves the horizon a third of a mile.</p>
+    <p class="small">The chart gives geometry only, the geographic range. A light too weak for the distance is not seen at it, however high it stands; and the glow of the most powerful lights on haze or cloud, their loom, can be seen when the light itself is below the horizon.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">D = 2.117 (√h + √H)</span>, with <span class="f">D</span> in nautical miles and the height of eye <span class="f">h</span> and of the light <span class="f">H</span> in metres. Each term is the distance of one horizon. The constant is the <i>American Practical Navigator</i>’s 1.169 for heights in feet, times the square root of 3.281 feet to the metre. It comes from <span class="f">√(2Rh / β)</span>, with the earth’s mean radius <span class="f">R</span> of 3440.1 nautical miles and a factor <span class="f">β</span> of 0.8279 for refraction, which bends the line of sight down around the curve and puts the horizon about 10 percent farther off than a straight line would. The three rulers are <span class="f">√h</span>, <span class="f">√H</span> and <span class="f">D/2.117</span>; the outer two carry equal weight, so the middle stands halfway and reads their sum at half the size: its 0 to 42 miles fill the same height as either ruler’s 0 to 100 metres. Kilometres are nautical miles times 1.852.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>National Geospatial-Intelligence Agency, <i>The American Practical Navigator</i> (Bowditch), Pub. No. 9, 2019 edition, volume 2, “Explanation of Navigation Tables,” Table 12, Distance of the Horizon: the formula, the mean radius of 3440.1 nautical miles, the refraction factor 0.8279, and <span class="f">D = 1.169√h</span> for heights in feet; checked against the table’s own values (3.7 miles at 10 feet, 11.7 at 100). <a href="https://thenauticalalmanac.com/2019_Bowditch-_American_Practical_Navigator/Volume-_2/03-%20Useful%20Tables/Explanation%20of%20Navigation%20Tables.pdf">PDF</a>. A work of the United States government, in the public domain.</li>
+      <li>The same, volume 1, chapter 7, “Short-Range Aids to Navigation,” article 720: that a light’s distance “cannot be estimated by its apparent brightness,” and that the loom of the most powerful lights is sometimes seen when the light is beyond its geographic range. <a href="https://thenauticalalmanac.com/2019_Bowditch-_American_Practical_Navigator/Volume-_1/04-%20Part%202-%20Piloting/Chapter%207-%20Short-Range%20Aids%20To%20Navigation%20.pdf">PDF</a>.</li>
+      <li>Dick Everitt, “Nav in a Nutshell: Lighthouse characteristics on charts,” <a href="https://www.pbo.co.uk/?p=23421"><i>Practical Boat Owner</i></a>, 27 August 2015: the dipping distance, when a light just shows over the horizon, and that on calm water “you can move your eye level up and down to make the light ‘dip’.”</li>
+      <li>The figures in the remarks are computed from the formula above; the readout computes the same ones live.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>06, Range of a light</dd>
+      <dt>Type</dt><dd>Three parallel scales, sum form, square-root rulers, middle scale graduated twice</dd>
+      <dt>Range</dt><dd>Eye and light 0 to 100 metres; distance 0 to 42 nautical miles</dd>
+      <dt>Drawn</dt><dd>9 November 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+
+// Bowditch Table 12: D = 1.169 sqrt(h in feet); in metres, times sqrt(3.2808).
+const K = 1.169 * Math.sqrt(1 / 0.3048);
+const KM = 1.852;
+const sq = Math.sqrt;
+const one = (x) => x.toFixed(1);
+const ht = (h) => (h < 10 ? +h.toFixed(1) : Math.round(h));
+
+const heights = {
+  major: [0, 1, 2, 3, 4, 5, 6, 8, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100],
+  minor: [...range(0, 2, 0.25), ...range(2, 6, 0.5), ...range(6, 20, 1), ...range(20, 100, 5)],
+  sparse: [3, 5, 6],
+};
+const snap = (h) => (h < 2 ? Math.round(h * 10) / 10 : h < 10 ? Math.round(h * 2) / 2 : Math.round(h));
+const A = { label: "Eye", unit: "metres", min: 0, max: 100, step: 0.1, value: 3, f: sq, snap, fmt: ht, ticks: heights };
+const C = { label: "Light", unit: "metres", min: 0, max: 100, step: 0.1, value: 40, f: sq, snap, fmt: ht, ticks: heights };
+
+const hold = document.getElementById("hold");
+let last = { h: A.value, H: C.value, S: sq(A.value) + sq(C.value) };
+let chart = null;
+chart = nomogram(document.getElementById("chart"), {
+  width: 600, height: 800, bottomPad: 72,
+  A, C,
+  mids: [{
+    label: "Distance", unit: "nautical miles", g: (d) => d / K, alpha: 1, beta: 1, gamma: 0,
+    min: 0, max: 43, side: "right",
+    ticks: { major: range(0, 40, 5), minor: range(0, 42, 1) },
+    inner: { label: "km", to: (km) => km / KM, ticks: { major: range(0, 70, 10), minor: range(0, 75, 5) } },
+  }],
+}, show);
+
+function show(h, H) {
+  // Holding the range: whichever ring moved, the other follows so that
+  // sqrt(h) + sqrt(H) stays the same, within the rulers.
+  if (hold?.checked && chart && (h !== last.h || H !== last.H)) {
+    const S = last.S;
+    let nh = h, nH = H;
+    if (h !== last.h) {
+      nH = Math.min(100, Math.max(0, S - sq(h))) ** 2;
+      nh = Math.max(0, S - sq(nH)) ** 2;
+    } else {
+      nh = Math.min(100, Math.max(0, S - sq(H))) ** 2;
+      nH = Math.max(0, S - sq(nh)) ** 2;
+    }
+    last = { h: nh, H: nH, S };
+    chart.set(nh, nH);
+    return;
+  }
+  last = { h, H, S: sq(h) + sq(H) };
+  const D = K * last.S;
+  document.getElementById("r-h").textContent = `${ht(h)} m`;
+  document.getElementById("r-l").textContent = `${ht(H)} m`;
+  document.getElementById("r-d").textContent = `${one(D)} nmi`;
+  document.getElementById("r-km").textContent = `${one(D * KM)} km`;
+  // The note works from the heights as displayed, so its sums agree with the readout.
+  const sh = ht(h), sH = ht(H);
+  document.getElementById("r-note").textContent = sh > 0 && sH > 0
+    ? `Your horizon is ${one(K * sq(sh))} nautical miles off and the light’s is ${one(K * sq(sH))}; the line of sight grazes the sea between them. Adding the heights first, ${ht(sh + sH)} m, would give ${one(K * sq(sh + sH))}.`
+    : `With one end at the water there is only one horizon, ${one(D)} nautical miles from the other end.`;
+}
+</script>
+</body>
+</html>

@@ -2,17 +2,23 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side) and `public/js/zchart.js` for Z charts (quotient form, two parallel rulers from zero at opposite corners, a diagonal from 0 to ∞ graduated on both sides, a fan of equal-answer lines). Five sheets: dew point, body surface area, thin lens, compound growth, bicycle gears. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
+Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side) and `public/js/zchart.js` for Z charts (quotient form, two parallel rulers from zero at opposite corners, a diagonal from 0 to ∞ graduated on both sides, a fan of equal-answer lines). Six sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
 
 ## Next steps
 
-- Sessions 6 and 7 are new pieces (slots 5 and 6); session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8).
-- The operator's latest question (after pull request #7) is whether nomograms can have more than three scales. A four-variable chart with a turning point on a hidden axis is on the charter's horizon. As a new form, it waits for session 8, which could take it up.
-- A later sheet could use the Z chart engine for another quotient whose duplicates or reciprocals matter (it handles any k = fA(a)/fC(c) with fA, fC linear; `inv` must invert f).
-- The engine now supports two-line names (`name`), names at a scale's own ends (`nameAtEnds`), phone-dropped labels (`ticks.sparse`) and `nameDx`. Sheet 05's crowded corners could use similar options in `zchart.js`.
+- Session 7 is a new piece (slot 6); session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8).
+- The operator's questions after pull requests #7 and #9 ask whether nomograms can have more than three scales, or extend into higher dimensions. A four-variable chart with a turning point on a hidden axis is on the charter's horizon; as a new form it waits for session 8, which should take it up.
+- Fields not yet on the site: electricity, sound, astronomy, cooking.
+- A later sheet could use the Z chart engine for another quotient (it handles k = fA(a)/fC(c) with fA, fC linear; `inv` must invert f).
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
 
 ## Critic suggestions not yet acted on
+
+Session 6 (Sheet 06, Range of a light):
+- Make the middle scale's kilometre labels larger and darker; at the default setting the crossing sits on the km "30" label.
+- The labels 2 to 6 crowd at the low end of both height rulers on desktop.
+- "Sitting at 2.5 metres and standing at 4" is a high eye height for a small boat; consider 1.5 and 2.5 m, and recompute the band.
+- Heights in feet (US light lists use feet) could be a second graduation on each height ruler.
 
 Session 5 (reviewing Sheet 05 through a stale diff):
 - Bicycle gears: at the default 48×16 the crossing mark and index line sit on the "3" ratio label; move ratio labels off the line's path or redraw the crossing's label above it.
