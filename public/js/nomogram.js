@@ -270,5 +270,12 @@ export function nomogram(svg, cfg, onChange) {
   }
 
   update();
-  return { set(a, c) { state.a = a; state.c = c; update(); } };
+  // The drawing's geometry, for a sheet that draws on top of the chart:
+  // posA and posC give the height of a value of fA or fC on its ruler.
+  return {
+    set(a, c) { state.a = a; state.c = c; update(); },
+    posA: (fv) => bottom - m1 * (fv - a0),
+    posC: (fv) => bottom - m2 * (fv - c0),
+    xA, xC, mids, line,
+  };
 }

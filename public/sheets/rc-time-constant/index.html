@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 07: RC time constant · Index Line</title>
+<meta name="description" content="A working nomogram for the time constant of a resistor and a capacitor, on rulers that carry only the values you can buy. The preferred numbers are a logarithmic ruler already, and five of them stand off it.">
+<meta property="og:title" content="Sheet 07: RC time constant · Index Line">
+<meta property="og:description" content="A working nomogram for the time constant of a resistor and a capacitor, on rulers that carry only the values you can buy. The preferred numbers are a logarithmic ruler already, and five of them stand off it.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 07 of 07</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 07, RC time constant: <span>the parts you can buy are already a ruler.</span></p>
+    <label class="hold"><input type="checkbox" id="tol" checked> Show ±10 percent: the spread of each part, and the band it puts on the answer</label>
+    <svg id="chart" aria-label="RC time constant nomogram: resistance on the left, capacitance on the right, time constant and cutoff frequency in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. The rings stop only at standard E12 values. Outer ticks are the values sold; the short inner ticks are exact twelfths of a decade.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>RC time constant</h1>
+    <p class="lede">How fast a capacitor charges through a resistor, from the two parts. The rulers carry only the values a parts drawer holds, twelve to a decade, and on a logarithmic ruler those values fall almost evenly. Almost: five of them stand off the line, and the chart shows where.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Resistor</dt><dd id="r-r">10 kΩ</dd></div>
+      <div><dt>Capacitor</dt><dd id="r-c">100 nF</dd></div>
+      <div class="out"><dt>Time constant</dt><dd id="r-t">1 ms</dd></div>
+      <div><dt>Cutoff</dt><dd id="r-f">159 Hz</dd></div>
+    </dl>
+    <p class="small" id="r-tol">With ±10 percent parts the time constant lies anywhere from 0.81 to 1.21 ms.</p>
+    <p class="small" id="r-pairs">Other pairs within 5 percent, with the resistor in the same decade: 12 kΩ × 82 nF, 15 kΩ × 68 nF, 18 kΩ × 56 nF, 22 kΩ × 47 nF, 47 kΩ × 22 nF, 56 kΩ × 18 nF, 68 kΩ × 15 nF, 82 kΩ × 12 nF.</p>
+
+    <figure class="plate">
+      <svg id="curve" viewBox="0 0 560 210" role="img" aria-label="The capacitor's voltage rising toward the supply, 63 percent at one time constant, 95 at three, 99.3 at five"></svg>
+      <figcaption>What the answer means. Close the switch and the capacitor’s voltage climbs toward the supply along this curve, the same shape for every pair of parts; only the time scale under it changes, and it follows the chart. One time constant gets it 63 percent of the way.</figcaption>
+    </figure>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the resistor, in ohms (k for thousands, M for millions).</li>
+      <li>Set the right ring at the capacitor, in farads (n for billionths, µ for millionths).</li>
+      <li>Read the time constant where the line crosses the middle scale, on its right. On its left, read the cutoff frequency of the same two parts used as a low-pass or high-pass filter.</li>
+      <li>To find parts for a time constant you need, put the line through it and look for other ring positions whose line passes through the same point; the readout lists the pairs that come within 5 percent with the resistor in the same decade.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Look at the outer rulers before you move anything. They are logarithmic, so the paper from 1k to 10k is the same as from 10k to 100k, and the twelve values in each decade stand at nearly equal steps. That is not the chart’s doing. The standard values, the E12 series of IEC 60063, were chosen as a geometric progression: each is about 21 percent above the last, the twelfth root of ten, so on a ruler that measures ratios they are already evenly spaced. A designer who reaches into the drawer is picking points off a logarithmic scale whether they know it or not, and the drawer is the ruler printed in parts.</p>
+    <p>Now look at the short ticks on the inner side of each ruler. They are where exact twelfths of a decade fall. Most of the values sold sit on them: 1.2, 1.5, 1.8, 2.2, 5.6 and 6.8 are the twelfth roots of ten rounded to two figures. Five are not. 2.7, 3.3, 3.9 and 4.7 stand above their marks, where the arithmetic gives 2.6, 3.2, 3.8 and 4.6, and 8.2 stands below the 8.3 it should be. So the steps are not equal: 2.2 to 2.7 is a step of 23 percent and 3.3 to 3.9 one of 18. These are values that were in use before the series was standardized, and the committee kept them.</p>
+    <p>The chart shows what that costs. Put the line through 10k and 100 nF; it crosses 1 ms. On an exact series, any two rings moved the same number of steps in opposite directions would keep the line through that point, because a step up on one ruler and a step down on the other cancel. Move them a step at a time: 12k with 82 nF gives 0.98 ms, 15k with 68 nF 1.02, 18k with 56 nF 1.01, 22k with 47 nF 1.03, 27k with 39 nF 1.05, and 33k with 33 nF 1.09. The line walks up the middle scale as the rings pass through the region where the old values stand high. At 33 and 33 both rings sit on high values at once, and the line misses by 9 percent.</p>
+    <p>Then tick the tolerance box. Each ring gets a bar for its ±10 percent, and on a logarithmic ruler a fixed percentage is a fixed length, so the bar is the same size at 1k as at 1M. The red band between the two bars is every line the real parts could make, and where it crosses the middle scale is the range of the answer: 0.81 to 1.21 times the nominal time constant. That band is about as long as one bar, though it stands for twice the spread, because the middle scale is drawn at half size.</p>
+    <p>The bars also show why twelve values are enough. Ten percent either side of each value reaches about to the next value’s bar, so the series covers the decade with bars that just meet: 1.8 at its top and 2.2 at its bottom both reach 1.98. The fit is not perfect. The exact spacing would be met by bars of 9.56 percent, and because the historic values break the geometry, there are two small gaps where no E12 part at ±10 percent can land, from 1.32 to 1.35 and from 2.42 to 2.43. 2.7 and 3.3 just meet, at 2.97, as 1.8 and 2.2 do; elsewhere neighbouring bars overlap.</p>
+    <p class="small">So the band answers a practical question. A 12k is one step from a 10k, about 20 percent, and the band of either one reaches nearly to the other. Choosing between neighbouring values to hit a time constant is pointless with 10 percent parts unless you measure them first.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">τ = RC</span>, with <span class="f">τ</span> in seconds, <span class="f">R</span> in ohms and <span class="f">C</span> in farads. The capacitor’s voltage, charging from zero toward a supply <span class="f">V</span>, is <span class="f">V(1 − e<sup>−t/τ</sup>)</span>: 63.2 percent of the way at <span class="f">t = τ</span>, 95.0 at 3τ and 99.3 at 5τ. The cutoff frequency of the same parts used as a first-order filter, where the output has fallen to 1/√2 of the input, is <span class="f">f = 1/(2πτ)</span>, so 1 ms is 159 Hz. The three rulers are <span class="f">log R</span>, <span class="f">log C</span> and <span class="f">log τ</span>; the outer two carry equal weight, so the time-constant scale stands halfway and reads their sum at half the size. Its six decades, 1 µs to 1 s, fill the paper that each outer ruler’s three decades fill. The E12 values are 1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8 and 8.2 in every decade; the inner ticks are at <span class="f">10<sup>n/12</sup></span>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>“E series of preferred numbers,” <a href="https://en.wikipedia.org/wiki/E_series_of_preferred_numbers"><i>Wikipedia</i></a>, CC BY-SA 4.0, read 10 November 2026: the E12 values and their 10 percent tolerance; each value as a root of ten rounded to two figures; that the values 2.7, 3.3, 3.9, 4.7 and 8.2 round to the second-nearest figure because changing the values in use before standardization “was not practical”; the first standard, IEC 63, of 1952, now IEC 60063:2015; and the constant tangential tolerance, at which a series covers every resistance without gap or overlap, 9.56 percent for E12.</li>
+      <li>“RC time constant,” <a href="https://en.wikipedia.org/wiki/RC_time_constant"><i>Wikipedia</i></a>, CC BY-SA 4.0: τ = RC, the charging curve and its 63 percent point, and the cutoff frequency 1/(2πRC).</li>
+      <li>For an earlier printed chart of the same formula: Max Applebaum, “RC Time-Constant Nomogram,” <a href="https://www.rfcafe.com/references/electronics-world/rc-time-constant-nomogram-electronics-world-july-1965.htm"><i>Electronics World</i>, July 1965</a>, reproduced by RF Cafe, which also reads off pairs of parts for a wanted time constant.</li>
+      <li>The figures in the remarks are computed from the formula and the E12 values; the readout computes the same ones live.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>07, RC time constant</dd>
+      <dt>Type</dt><dd>Three parallel scales, sum form, logarithmic, outer rulers in preferred values, middle scale graduated twice</dd>
+      <dt>Range</dt><dd>Resistance 1 kΩ to 1 MΩ; capacitance 1 nF to 1 µF; time constant 1 µs to 1 s</dd>
+      <dt>Drawn</dt><dd>10 November 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range } from "/js/nomogram.js";
+
+// The E12 series (IEC 60063). A ring's value is a step number n from 0 to
+// 36 across three decades; its position is the logarithm of the part's
+// value, joined straight between steps so that dragging is smooth.
+const E12 = [1, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2];
+const val = (n) => +(E12[n % 12] * 10 ** Math.floor(n / 12)).toPrecision(3);
+const lg = Math.log10;
+const L = (x) => {
+  const i = Math.min(35, Math.max(0, Math.floor(x)));
+  return lg(val(i)) + (x - i) * (lg(val(i + 1)) - lg(val(i)));
+};
+const steps = range(0, 36, 1);
+const odd = steps.filter((n) => n % 2); // not in E6: dropped at phone width
+const num = (x) => String(+x.toPrecision(3));
+const ohms = (n) => (n === 36 ? "1M" : `${num(val(n))}k`);
+const farads = (n) => (n === 36 ? "1µ" : `${num(val(n))}n`);
+
+const A = { label: "Resistance", unit: "ohms", min: 0, max: 36, step: 1, value: 12, f: L, snap: Math.round, fmt: ohms, ticks: { major: steps, minor: [], sparse: odd } };
+const C = { label: "Capacitance", unit: "farads", min: 0, max: 36, step: 1, value: 24, f: L, snap: Math.round, fmt: farads, ticks: { major: steps, minor: [], sparse: odd } };
+
+// Time constant in microseconds: R in kilohms times C in nanofarads.
+const time = (us) => us >= 1e6 ? `${num(us / 1e6)} s` : us >= 1e3 ? `${num(us / 1e3)} ms` : `${num(us)} µs`;
+const hz = (f) => f >= 1e3 ? `${num(f / 1e3)} kHz` : `${num(f)} Hz`;
+const decades = (lo, hi) => { const o = []; for (let e = lo; e <= hi; e++) o.push(10 ** e); return o; };
+const tauMajor = decades(0, 6).flatMap((d) => (d < 1e6 ? [d, 2 * d, 5 * d] : [d]));
+const tauMinor = decades(0, 5).flatMap((d) => [3, 4, 6, 7, 8, 9].map((k) => k * d));
+const tauLabel = (u) => (lg(u) % 1 === 0 ? time(u) : num(u / 10 ** Math.floor(lg(u))));
+const fMajor = decades(0, 5);
+const fMinor = decades(-1, 5).flatMap((d) => [2, 5].map((k) => k * d)).filter((f) => f > 0.16 && f < 1.6e5);
+
+const unitR = (k) => (k >= 1000 ? `${num(k / 1000)} MΩ` : `${num(k)} kΩ`);
+const unitC = (n) => (n >= 1000 ? `${num(n / 1000)} µF` : `${num(n)} nF`);
+const tolBox = document.getElementById("tol");
+let state = [12, 24];
+let chart = null, ready = false;
+chart = nomogram(document.getElementById("chart"), {
+  width: 600, height: 820, bottomPad: 72, xA: 110, xC: 490,
+  A, C,
+  mids: [{
+    label: "Time constant", unit: "RC", g: lg, alpha: 1, beta: 1, gamma: 0,
+    min: 1, max: 1e6, side: "right",
+    fmt: tauLabel,
+    ticks: { major: tauMajor, minor: tauMinor, sparse: tauMajor.filter((u) => lg(u) % 1 !== 0) },
+    inner: { label: "cutoff", to: (f) => 1e6 / (2 * Math.PI * f), fmt: hz, ticks: { major: fMajor, minor: fMinor } },
+  }],
+}, show);
+
+// Drawn over the chart: the exact twelfths of a decade on each ruler's
+// inner side, and, for the tolerance, a bar on each ring and the band of
+// lines between them.
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("chart");
+const mk = (name, attrs, parent = svg) => {
+  const node = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  parent.insertBefore(node, parent === svg ? chart.line : null);
+  return node;
+};
+const ideal = mk("g", { class: "ideal" });
+for (const n of steps) {
+  mk("line", { x1: chart.xA, x2: chart.xA + 10, y1: chart.posA(n / 12), y2: chart.posA(n / 12) }, ideal);
+  mk("line", { x1: chart.xC, x2: chart.xC - 10, y1: chart.posC(n / 12), y2: chart.posC(n / 12) }, ideal);
+}
+const tolG = mk("g", { class: "tolerance" });
+const beam = mk("polygon", { class: "beam" }, tolG);
+const barA = mk("rect", { class: "bar", width: 6, x: chart.xA + 13 }, tolG);
+const barC = mk("rect", { class: "bar", width: 6, x: chart.xC - 19 }, tolG);
+const band = mk("rect", { class: "bar", width: 8, x: chart.mids[0].x - 4 }, tolG);
+const HI = lg(1.1), LO = lg(0.9);
+
+function drawTol(a, c) {
+  tolG.style.display = tolBox.checked ? "" : "none";
+  const aHi = chart.posA(L(a) + HI), aLo = chart.posA(L(a) + LO);
+  const cHi = chart.posC(L(c) + HI), cLo = chart.posC(L(c) + LO);
+  beam.setAttribute("points", `${chart.xA},${aHi} ${chart.xC},${cHi} ${chart.xC},${cLo} ${chart.xA},${aLo}`);
+  barA.setAttribute("y", aHi); barA.setAttribute("height", aLo - aHi);
+  barC.setAttribute("y", cHi); barC.setAttribute("height", cLo - cHi);
+  const d = chart.mids[0].d;
+  const mHi = aHi + d * (cHi - aHi), mLo = aLo + d * (cLo - aLo);
+  band.setAttribute("y", mHi); band.setAttribute("height", mLo - mHi);
+}
+
+
+function show(a, c) {
+  state = [a, c];
+  const R = val(a), Cn = val(c), tau = R * Cn;
+  document.getElementById("r-r").textContent = unitR(R);
+  document.getElementById("r-c").textContent = unitC(Cn);
+  document.getElementById("r-t").textContent = time(tau);
+  document.getElementById("r-f").textContent = hz(1e6 / (2 * Math.PI * tau));
+  document.getElementById("r-tol").textContent =
+    `With ±10 percent parts the time constant lies anywhere from ${time(tau * 0.81)} to ${time(tau * 1.21)}.`;
+  // Only pairs whose resistor is in the same decade as the one chosen,
+  // so the list stays short; the others are these moved by powers of ten.
+  const pairs = [];
+  const dec = Math.min(24, Math.floor(a / 12) * 12);
+  for (const i of steps.filter((n) => n >= dec && n < dec + 12)) for (const j of steps) {
+    if (i === a && j === c) continue;
+    const r = (val(i) * val(j)) / tau;
+    if (r > 0.95 && r < 1.05) pairs.push(`${unitR(val(i))} × ${unitC(val(j))}`);
+  }
+  document.getElementById("r-pairs").textContent = pairs.length
+    ? `Other pairs within 5 percent, with the resistor in the same decade: ${pairs.join(", ")}.`
+    : "No other pair with the resistor in the same decade comes within 5 percent.";
+  if (ready) { drawTol(a, c); drawCurve(tau); }
+}
+tolBox.addEventListener("change", () => drawTol(...state));
+
+// The charging curve, with its time axis in the chart's time constant.
+const cv = document.getElementById("curve");
+const X0 = 46, X1 = 540, Y0 = 170, Y1 = 22;
+const px = (t) => X0 + (t / 5) * (X1 - X0), py = (v) => Y0 - v * (Y0 - Y1);
+const put = (name, attrs, text) => {
+  const node = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  if (text !== undefined) node.textContent = text;
+  return cv.appendChild(node);
+};
+put("line", { x1: X0, x2: X1, y1: Y0, y2: Y0, class: "axis" });
+put("line", { x1: X0, x2: X0, y1: Y0, y2: Y1 - 6, class: "axis" });
+put("line", { x1: X0, x2: X1, y1: py(1), y2: py(1), class: "guide" });
+for (const [v, lab] of [[0, "0"], [0.5, "50%"], [1, "100%"]]) put("text", { x: X0 - 8, y: py(v) + 4.5, class: "lab", "text-anchor": "end" }, lab);
+let d = `M ${X0} ${Y0}`;
+for (let i = 1; i <= 100; i++) { const t = i / 20; d += ` L ${px(t).toFixed(1)} ${py(1 - Math.exp(-t)).toFixed(1)}`; }
+put("path", { d, class: "curve" });
+for (const [t, lab] of [[1, "63%"], [3, "95%"], [5, "99.3%"]]) {
+  const v = 1 - Math.exp(-t);
+  put("line", { x1: px(t), x2: px(t), y1: Y0, y2: py(v), class: "guide" });
+  put("circle", { cx: px(t), cy: py(v), r: 3.5, class: "dot" });
+  put("text", { x: px(t) - (t === 5 ? 4 : -6), y: py(v) + 18, class: "lab", "text-anchor": t === 5 ? "end" : "start" }, lab);
+}
+const ticks = [1, 2, 3, 4, 5].map((t) => {
+  put("line", { x1: px(t), x2: px(t), y1: Y0, y2: Y0 + 6, class: "axis" });
+  return [put("text", { x: px(t), y: Y0 + 22, class: "lab", "text-anchor": "middle" }, ""),
+    put("text", { x: px(t), y: Y0 + 38, class: "lab soft", "text-anchor": "middle" }, `${t}τ`)];
+});
+put("text", { x: X0, y: Y0 + 22, class: "lab", "text-anchor": "middle" }, "0");
+function drawCurve(tau) {
+  ticks.forEach(([top], i) => { top.textContent = time(tau * (i + 1)); });
+}
+
+ready = true;
+show(A.value, C.value);
+</script>
+</body>
+</html>
