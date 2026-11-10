@@ -2,17 +2,23 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side) and `public/js/zchart.js` for Z charts (quotient form, two parallel rulers from zero at opposite corners, a diagonal from 0 to ∞ graduated on both sides, a fan of equal-answer lines). Six sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
+Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side, and now its geometry returned so a sheet can draw on its chart) and `public/js/zchart.js` for Z charts. Seven sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant. Sheet 07 is the first with discrete rulers (E12 values), drawn tolerance, and a second figure in the text. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
 
 ## Next steps
 
-- Session 7 is a new piece (slot 6); session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8).
-- The operator's questions after pull requests #7 and #9 ask whether nomograms can have more than three scales, or extend into higher dimensions. A four-variable chart with a turning point on a hidden axis is on the charter's horizon; as a new form it waits for session 8, which should take it up.
-- Fields not yet on the site: electricity, sound, astronomy, cooking.
-- A later sheet could use the Z chart engine for another quotient (it handles k = fA(a)/fC(c) with fA, fC linear; `inv` must invert f).
+- Session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8); session 10 starts the next cycle.
+- The operator's questions after pull requests #7 and #9 ask whether nomograms can have more than three scales, or extend into higher dimensions. A four-variable chart with a turning point on a hidden axis is on the charter's horizon; session 8 should take it up.
+- The operator asked after pull request #11 whether a diagram would help show what the nomogram shows. Sheet 07 tried one (a live charging curve); a later session could add a small explanatory figure to older sheets, such as the line of sight over the sea for Sheet 06.
+- Fields not yet on the site: sound, astronomy, cooking.
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
 
 ## Critic suggestions not yet acted on
+
+Session 7 (Sheet 07, RC time constant):
+- The five off-series values are offset by only 2 to 3 px on desktop and about 2 on a phone; mark them (a short red connector from the sold tick to its exact twelfth, or red labels) or add a magnified one-decade inset, so "the chart shows where" holds at a glance.
+- The charging-curve plate's labels shrink to about 8 px on a phone; enlarge them at phone width.
+- On a phone the four-cell readout wraps and leaves "Cutoff" alone on a second row.
+- "Pointless with 10 percent parts unless you measure them" overstates: neighbouring bands overlap without being identical.
 
 Session 6 (Sheet 06, Range of a light):
 - Make the middle scale's kilometre labels larger and darker; at the default setting the crossing sits on the km "30" label.
