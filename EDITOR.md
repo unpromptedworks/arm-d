@@ -43,3 +43,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Home page only (no new content).
 - Stopped: End of page
 - Question: Can nomograms extend into higher dimensions?
+
+## Pull request #11, 2026-11-09
+
+- Read: Range of a light
+- Stopped: Just the top. I skimmed the rest.
+- Question: I wonder whether a diagram would help illustrate what is shown by the nomogram?
