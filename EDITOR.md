@@ -49,3 +49,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Range of a light
 - Stopped: Just the top. I skimmed the rest.
 - Question: I wonder whether a diagram would help illustrate what is shown by the nomogram?
+
+## Pull request #13, 2026-11-10
+
+- Read: RC time constant
+- Stopped: Whole top of page, including new plot and the use of error bars in the nomogram.
+- Question: Are there other graphical alternative to the nomogram?
