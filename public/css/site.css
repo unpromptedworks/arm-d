@@ -217,3 +217,21 @@ footer.foot {
 .plate .dot { fill: var(--red); }
 .plate .lab { fill: var(--ink); font: 500 14px var(--cond); }
 .plate .lab.soft { fill: var(--ink-soft); }
+
+/* Sheet 08: four scales and a turning axis (public/js/turning.js). */
+.nomo .pivot-axis { stroke: var(--ink-soft); stroke-width: 1.4; stroke-dasharray: 7 5; }
+.nomo .bare .ev { display: none; }
+.nomo .ev .tick { stroke: var(--ink-soft); }
+.nomo .ev .tick-label { fill: var(--ink-soft); font-size: 13px; }
+.nomo .scenes .tick { stroke: var(--ink-soft); }
+.nomo .tick-label.scene { fill: var(--ink-soft); font-size: 14px; font-style: italic; }
+.nomo .cross.pivot { stroke-width: 2.4; }
+.nomo .handle.off-scale .handle-ring { stroke-dasharray: 4 3; fill: transparent; }
+@media (max-width: 600px) {
+  .nomo.turning .tick-label { font-size: 20px; }
+  .nomo.turning .tick-label.scene { font-size: 18px; }
+  .nomo.turning .ev .tick-label { font-size: 18px; }
+}
+.nomo.turning .scales { pointer-events: none; }
+.nomo.turning .tick-label { paint-order: stroke; stroke: var(--sheet); stroke-width: 4px; stroke-linejoin: round; }
+.nomo .scale:not(.bare) > .pivot-axis { stroke-dasharray: none; }

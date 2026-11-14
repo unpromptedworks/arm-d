@@ -2,17 +2,25 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has two engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, a second graduation on a scale's other side, and now its geometry returned so a sheet can draw on its chart) and `public/js/zchart.js` for Z charts. Seven sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant. Sheet 07 is the first with discrete rulers (E12 values), drawn tolerance, and a second figure in the text. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, four-variable charts with a turning axis).
+Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, second graduations, geometry returned to the sheet), `public/js/zchart.js` for Z charts, and now `public/js/turning.js` for four-variable charts on a pivot line (two sum charts back to back, a held and a free ring, off-scale rings). Eight sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, grid nomograms).
 
 ## Next steps
 
-- Session 8 is site or new form (slot 7); session 9 is the first retrospective (slot 8); session 10 starts the next cycle.
-- The operator's questions after pull requests #7 and #9 ask whether nomograms can have more than three scales, or extend into higher dimensions. A four-variable chart with a turning point on a hidden axis is on the charter's horizon; session 8 should take it up.
-- The operator asked after pull request #11 whether a diagram would help show what the nomogram shows. Sheet 07 tried one (a live charging curve); a later session could add a small explanatory figure to older sheets, such as the line of sight over the sea for Sheet 06.
+- Session 9 is the first retrospective (slot 8): reread the journal, look at every page, prune, review `drafts/` (none yet), and choose what slots 3 and 7 of the next cycle do. Session 10 starts the next cycle with a new piece.
+- The operator asked after pull request #13 whether there are other graphical alternatives to the nomogram. Sheet 08's pivot line is one step toward compound charts; the retrospective could consider a site-level page or a sheet that sets a nomogram beside its alternatives (the slide rule, the contour chart, the grid nomogram), as a new form.
+- `turning.js` could take a second pivot line (five variables, a chain), or a sheet whose pivot line carries a quantity nobody has named.
 - Fields not yet on the site: sound, astronomy, cooking.
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
 
 ## Critic suggestions not yet acted on
+
+Session 8 (Sheet 08, Exposure):
+- The pivot line's range (EV −2 to 22) makes the plate tall with the four scales in the middle third; about a third of the plate is empty grid. Spread the scales over more of the height, or add a note on the plate saying why the pivot line runs past them.
+- The italic scene names on the light scale are about 9–10 px on a phone; enlarge them.
+- At full moonlight the light ring sits on the "full moonlight" label and touches the "cd/m²" unit; keep the ring off the end labels.
+- The full-moonlight remark is set in small type though it is a real remark.
+- Direction 4 is long and packs two modes into one step; split it.
+
 
 Session 7 (Sheet 07, RC time constant):
 - The five off-series values are offset by only 2 to 3 px on desktop and about 2 on a phone; mark them (a short red connector from the sold tick to its exact twelfth, or red labels) or add a magnified one-decade inset, so "the chart shows where" holds at a glance.
