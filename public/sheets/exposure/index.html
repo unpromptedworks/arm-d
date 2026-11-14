@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 08: Exposure · Index Line</title>
+<meta name="description" content="A working four-variable nomogram for photographic exposure: film speed, light, aperture and shutter, solved with two lines that meet on an unmarked pivot line. Graduate the line and it turns out to be the exposure value.">
+<meta property="og:title" content="Sheet 08: Exposure · Index Line">
+<meta property="og:description" content="A working four-variable nomogram for photographic exposure: film speed, light, aperture and shutter, solved with two lines that meet on an unmarked pivot line. Graduate the line and it turns out to be the exposure value.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 08 of 08</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 08, Exposure: <span>four quantities, two lines, and a number between them.</span></p>
+    <label class="hold"><input type="checkbox" id="grad"> Graduate the pivot line: show the number the two lines meet at</label>
+    <svg id="chart" aria-label="Exposure nomogram: film speed and scene light on the left, an unmarked pivot line in the middle, shutter speed and aperture on the right"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys (a third of a stop a press, a whole stop with Shift). The first line runs from film speed through the light to the dashed pivot line; the second turns about that point.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Exposure</h1>
+    <p class="lede">The light in the scene, the film or sensor speed, the aperture and the shutter time: four quantities in one formula, and a three-scale chart can hold only three. So this one uses two straight lines. The first ends on a dashed line that carries no figures; the second turns about the point where the first ended. That point is the whole answer, and it has a name.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Film speed</dt><dd id="r-s">ISO 100</dd></div>
+      <div><dt>Light</dt><dd id="r-l">4,100 cd/m²</dd></div>
+      <div><dt>Aperture</dt><dd id="r-n">f/16</dd></div>
+      <div class="out"><dt>Shutter</dt><dd id="r-t">1/125</dd></div>
+    </dl>
+    <p class="small" id="r-scene">Full sun, distinct shadows (EV 15 at ISO 100). Aperture held; the shutter follows.</p>
+    <p class="small" id="r-eq">The same exposure at whole stops of aperture: f/2.8 1/4000, f/4 1/2000, f/5.6 1/1000, f/8 1/500, f/11 1/250, f/16 1/125, f/22 1/60.</p>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the film speed, the ISO setting. Faster films stand lower.</li>
+      <li>Set the second ring at the light in the scene. The names on its left are typical scenes from the American exposure guide; the figures on its right are their average luminance in candelas per square metre, what a light meter measures.</li>
+      <li>The first line stops on the dashed pivot line. Don’t read it; it is a hinge.</li>
+      <li>Set the aperture ring, on the right-hand ruler (smaller apertures stand lower), and read the shutter time where the line from the hinge to it crosses the ruler between them (faster times stand higher). Or set the shutter and read the aperture: whichever of the two you set last is held, and the other follows when you change the left side.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Look at the middle of the chart. Every other sheet on this site has three scales, because a straight line through two known points can find only one unknown. Exposure has four quantities, so the chart is two three-scale charts set back to back, sharing the dashed line in the middle. The first line takes the film speed and the light and fixes a point on it. The second starts at that point and takes the aperture to find the shutter. Such a line is called a pivot line or a tie line, and it is usually left without figures, since nothing on it needs reading; Ron Doerfler, describing four-variable charts, calls the point on it the pivot point.</p>
+    <p>Now tick the box. The pivot line gets numbers, and they are exposure values, <span class="f">EV = log₂(N²/t)</span>. The German shutter maker Friedrich Deckel developed the scale in the 1950s; in Europe it was sold as the Light Value System. A pivot line carries whatever the two halves of a formula have in common, and here the common quantity was worth a name, because it is the only thing the scene and the camera need to agree on. The scene and the film speed fix the exposure value; the lens and the shutter can then share it out between them any way they like.</p>
+    <p>Move the aperture ring and watch them share it. The second line turns about the pivot point and the shutter ring follows: a stop smaller on the aperture, a stop longer on the shutter. Every line through that point is the same exposure, and the readout lists them at whole stops. Change the film speed or the light instead and the pivot point slides along the line; the ring you set last on the right stays where it is and the other takes up the whole change, as a camera does in aperture priority or shutter priority.</p>
+    <p>The sunny sixteen rule is one of those lines. It says: on a sunny day, set f/16 and a shutter speed of one over the film speed. Put the light at full sun, the aperture at f/16, and slide the film speed. The shutter ring moves third for third with it, because with the aperture held, each third of a stop the film gains, the shutter has to give back. So the rule works at any film speed, and the chart says why. It also says the rule is a third of a stop out from the American guide: where the rule gives 1/100 at ISO 100, 1/400 at ISO 400, the chart’s full sun gives 1/125 and 1/500, at every speed. One of the two is rounded, and the chart cannot say which.</p>
+    <p>The rulers are drawn at exact stops and labelled the way cameras label them. 1/125 sits where 1/128 belongs, f/11 where f/11.3 would, ISO 125 where 126 would. A camera’s numbers are names for positions on a scale of doublings, and the chart reads only positions.</p>
+    <p class="small">Last, set the light at full moonlight, about EV −2, with ISO 100 and f/16. The shutter would need more than a quarter of an hour, and the ruler ends at 30 seconds. The ring stops at the end of its ruler, the line runs on past it, and the readout says how many stops dark the picture would be. Open the aperture or raise the film speed and the line comes back on.</p>
+
+    <h2>Formula</h2>
+    <p>The exposure equation for a reflected-light meter is <span class="f">N²/t = LS/K</span>, with <span class="f">N</span> the f-number, <span class="f">t</span> the exposure time in seconds, <span class="f">L</span> the average scene luminance in cd/m², <span class="f">S</span> the ISO arithmetic speed and <span class="f">K</span> the meter’s calibration constant, here 12.5. Taking base-2 logarithms, <span class="f">EV = log₂(N²/t) = log₂(LS/K)</span>; at ISO 100 the luminance is <span class="f">L = 2<sup>EV − 3</sup></span> cd/m², so full sun at EV 15 is about 4,100 cd/m². In stops, <span class="f">EV = 2 log₂ N − log₂ t</span>, which the APEX system of 1960 writes <span class="f">Ev = Av + Tv</span>: everything adds, and every ruler is uniform in stops.</p>
+    <p>Construction. Each half of the chart is an ordinary three-scale sum chart, like Sheet 00’s, with the pivot line as one of its outer scales. The pivot line is drawn at 30.6 units per stop, from EV −2 to 22. The light stands 0.6 of the way from the film speed to the pivot line, and the shutter 0.6 of the way from the aperture to it. For a straight line to add, the far outer scale must then run the opposite way at 1.5 times the pivot line’s stop, which is why higher film speeds and smaller apertures stand lower, and the middle scale the same way at 0.6 times it. The middle scales are always the compressed ones, so the two widest ranges, the light’s eighteen stops and the shutter’s seventeen, are put in the middle.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>“Exposure value,” <a href="https://en.wikipedia.org/wiki/Exposure_value"><i>Wikipedia</i></a>, CC BY-SA 4.0, read 14 November 2026: the definition <span class="f">EV = log₂(N²/t)</span>; the exposure equation with <span class="f">K = 12.5</span> and <span class="f">L = 2<sup>EV−3</sup></span> at ISO 100; Deckel and the 1950s, and the names Light Value System and Exposure Value System; APEX, proposed in the 1960 ASA standard; and the table of EV at ISO 100 for typical scenes, taken there from the ANSI exposure guides PH2.7-1973 and PH2.7-1986. The scene names on the chart are shortened from that table, each placed at its value or the middle of its range, except full moonlight (−3 to −2), placed at −2, where the ruler ends.</li>
+      <li>“Nomogram,” <a href="https://en.wikipedia.org/wiki/Nomogram"><i>Wikipedia</i></a>, CC BY-SA 4.0: the terms “tie lines” and “pivot lines” for the lines that join the stages of a compound nomogram.</li>
+      <li>“Sunny 16 rule,” <a href="https://en.wikipedia.org/wiki/Sunny_16_rule"><i>Wikipedia</i></a>, CC BY-SA 4.0: the rule’s statement, f/16 at the reciprocal of the film speed in direct sunlight.</li>
+      <li>Ron Doerfler, “The Art of Nomography I: Geometric Design,” <a href="https://deadreckonings.com/2008/01/09/the-art-of-nomography-i-geometric-design/"><i>Dead Reckonings</i></a>, 2008: four-variable charts, in which an alignment marks a pivot point and a second alignment from it finds the fourth variable.</li>
+      <li>The figures in the remarks are computed from the formula; the readout computes the same ones live.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>08, Exposure</dd>
+      <dt>Type</dt><dd>Four parallel scales and a pivot line, two sum charts back to back, all rulers uniform in stops</dd>
+      <dt>Range</dt><dd>ISO 100 to 6400; light EV −2 to 16 at ISO 100 (0.03 to 8,200 cd/m²); f/1.4 to f/22; 30 s to 1/4000 s</dd>
+      <dt>Drawn</dt><dd>14 November 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { turning } from "/js/turning.js";
+
+// Every value is a whole number of thirds of a stop.
+//   film speed s: thirds above ISO 100        (0 to 18)
+//   light b:      thirds of EV at ISO 100     (-6 to 48)
+//   pivot p:      thirds of EV at the set ISO = b + s
+//   aperture a:   thirds of 2 log2 N          (3 to 27, f/1.4 to f/22)
+//   shutter t:    thirds of -log2 t           (-15 to 36, 30 s to 1/4000)
+// and p = a + t.
+const ISO = [100, 125, 160, 200, 250, 320, 400, 500, 640, 800, 1000, 1250, 1600, 2000, 2500, 3200, 4000, 5000, 6400];
+const FNO = [1.4, 1.6, 1.8, 2, 2.2, 2.5, 2.8, 3.2, 3.5, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11, 13, 14, 16, 18, 20, 22];
+const SHUT = ["30 s", "25 s", "20 s", "15 s", "13 s", "10 s", "8 s", "6 s", "5 s", "4 s", "3.2 s", "2.5 s", "2 s", "1.6 s", "1.3 s", "1 s",
+  "0.8 s", "0.6 s", "1/2", "0.4 s", "0.3 s", "1/4", "1/5", "1/6", "1/8", "1/10", "1/13", "1/15", "1/20", "1/25", "1/30", "1/40", "1/50",
+  "1/60", "1/80", "1/100", "1/125", "1/160", "1/200", "1/250", "1/320", "1/400", "1/500", "1/640", "1/800", "1/1000", "1/1250", "1/1600",
+  "1/2000", "1/2500", "1/3200", "1/4000"];
+const iso = (s) => `${ISO[s]}`;
+const fno = (a) => `f/${FNO[a - 3]}`;
+const shut = (t) => SHUT[t + 15];
+const thirds = (lo, hi) => Array.from({ length: hi - lo + 1 }, (_, i) => lo + i);
+
+// Scenes, EV at ISO 100, from the ANSI table (via Wikipedia, "Exposure
+// value"), at each value or the middle of its range.
+const SCENES = [
+  [16, "sand or snow in sun", "light sand or snow in full sunlight"],
+  [15, "full sun", "full sun, distinct shadows"],
+  [14, "hazy sun", "hazy sun, soft shadows"],
+  [13, "cloudy bright", "cloudy bright, no shadows"],
+  [12, "overcast; open shade", "heavy overcast, or open shade in clear sunlight"],
+  [10, "just after sunset", "just after sunset"],
+  [8, "bright street, night", "a bright street scene at night"],
+  [6, "home interior", "a home interior"],
+  [4.5, "Christmas lights", "Christmas tree lights"],
+  [2, "distant lit buildings", "a distant view of lighted buildings"],
+  [-2, "full moonlight", "full moonlight"],
+];
+const phone = new Set([15, 12, 8, 4.5, -2]);
+const lum = (b) => 2 ** (b / 3 - 3); // cd/m² at the light ring
+const lumQ = (L) => 3 * (Math.log2(L) + 3);
+const fmtL = (L) => L >= 100 ? Math.round(L).toLocaleString("en-US") : L >= 1 ? String(+L.toPrecision(2)) : String(+L.toPrecision(1));
+
+const A = {
+  label: "Film speed", unit: "ISO", x: 64, min: 0, max: 18, value: 0, fmt: (s) => `ISO ${iso(s)}`,
+  grads: [{ side: "left", ticks: thirds(0, 18).map((s) => ({ q: s, label: iso(s), cls: s % 3 ? "sparse" : "" })) }],
+};
+const B = {
+  label: "Light", unit: "cd/m²", x: 231, min: -6, max: 48, value: 45, fmt: (b) => `${fmtL(lum(b))} candelas per square metre`,
+  grads: [
+    { side: "right", ticks: [
+      ...[0.1, 1, 10, 100, 1000].map((L) => ({ q: lumQ(L), label: fmtL(L) })),
+      ...[0.05, 0.2, 0.5, 2, 5, 20, 50, 200, 500, 2000, 5000].map((L) => ({ q: lumQ(L) })),
+    ] },
+    { side: "left", className: "scenes", major: 14, ticks: SCENES.map(([ev, name]) => ({ q: ev * 3, label: name, cls: phone.has(ev) ? "scene" : "scene sparse" })) },
+  ],
+};
+const P = {
+  label: "pivot line", name: ["Pivot", "line"], x: 342, min: -6, max: 66, axisClass: "axis pivot-axis",
+  grads: [{ side: "right", className: "ev", major: 9, minor: 5, ticks: thirds(-6, 66).map((p) => (p % 3 ? { q: p } : { q: p, label: String(p / 3), cls: (p / 3) % 2 ? "sparse" : "" })) }],
+};
+// The shutter, with the wider range, is the middle (compressed) scale of
+// the second half; the aperture is its outer scale.
+const C = {
+  label: "Shutter", unit: "seconds", x: 440, min: -15, max: 36, value: 21, fmt: shut,
+  grads: [{ side: "right", ticks: thirds(-15, 36).map((t) => (t % 3 ? { q: t } : { q: t, label: shut(t).replace(" s", "″"), cls: (t / 3) % 2 ? "" : "sparse" })) }],
+};
+const D = {
+  label: "Aperture", unit: "f-number", x: 588, min: 3, max: 27, value: 24, fmt: fno,
+  grads: [{ side: "right", ticks: thirds(3, 27).map((a) => ({ q: a, label: String(FNO[a - 3]), cls: a % 3 ? "sparse" : "" })) }],
+};
+
+const $ = (id) => document.getElementById(id);
+const chart = turning(document.getElementById("chart"), {
+  width: 660, height: 880, top: 74, bottomPad: 72, unit: 3, A, B, C, D, P, held: "D",
+}, show);
+
+const grad = document.getElementById("grad");
+const setGrad = () => chart.pivotG.classList.toggle("bare", !grad.checked);
+grad.addEventListener("change", setGrad);
+setGrad();
+
+function show({ A: s, B: b, C: t, D: a, p, free, short }) {
+  $("r-s").textContent = `ISO ${iso(s)}`;
+  $("r-l").textContent = `${fmtL(lum(b))} cd/m²`;
+  $("r-n").textContent = fno(a);
+  $("r-t").textContent = shut(t);
+  $("r-n").parentElement.classList.toggle("out", free === "D");
+  $("r-t").parentElement.classList.toggle("out", free === "C");
+  const ev = b / 3;
+  const near = SCENES.reduce((m, sc) => (Math.abs(sc[0] - ev) < Math.abs(m[0] - ev) ? sc : m));
+  const evTxt = (x) => String(+x.toFixed(2)).replace("-", "−").replace(/\.33$/, "⅓").replace(/\.67$/, "⅔").replace(/^(−?)0⅓/, "$1⅓").replace(/^(−?)0⅔/, "$1⅔");
+  const what = Math.abs(near[0] - ev) <= 0.5 ? near[2][0].toUpperCase() + near[2].slice(1) : `About as bright as ${near[2]} (EV ${evTxt(near[0])})`;
+  const evSet = p / 3;
+  let msg = s === 0 ? `${what}: EV ${evTxt(ev)} at ISO 100. ` : `${what}: EV ${evTxt(ev)} at ISO 100, ${evTxt(evSet)} at ISO ${iso(s)}. `;
+  if (short) {
+    const stops = Math.abs(short) / 3;
+    const n = `${evTxt(stops)} stop${stops === 1 ? "" : "s"}`;
+    const lack = free === "C"
+      ? (short < 0 ? "The shutter ruler ends at 30 seconds" : "The shutter ruler ends at 1/4000")
+      : (short < 0 ? "The aperture ruler ends at f/1.4" : "The aperture ruler ends at f/22");
+    msg += `${lack}: the picture would be ${n} too ${short < 0 ? "dark" : "light"}.`;
+  } else {
+    msg += free === "C" ? "Aperture held; the shutter follows." : "Shutter held; the aperture follows.";
+  }
+  $("r-scene").textContent = msg;
+  const pairs = [];
+  for (let a2 = 3; a2 <= 27; a2 += 3) {
+    const t2 = p - a2;
+    if (t2 >= -15 && t2 <= 36) pairs.push(`${fno(a2)} ${shut(t2)}`);
+  }
+  $("r-eq").textContent = pairs.length
+    ? `The same exposure at whole stops of aperture: ${pairs.join(", ")}.`
+    : "No aperture on the chart gives this exposure within the shutter’s range.";
+}
+</script>
+</body>
+</html>
