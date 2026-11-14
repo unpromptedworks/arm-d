@@ -55,3 +55,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: RC time constant
 - Stopped: Whole top of page, including new plot and the use of error bars in the nomogram.
 - Question: Are there other graphical alternative to the nomogram?
+
+## Pull request #15, 2026-11-14
+
+- Read: Exposure page
+- Stopped: The whole page
+- Question: Are nomograms always implmented as axes and read with a ruler, or are there other ways?
