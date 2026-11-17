@@ -61,3 +61,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Exposure page
 - Stopped: The whole page
 - Question: Are nomograms always implmented as axes and read with a ruler, or are there other ways?
+
+## Pull request #17, 2026-11-17
+
+- Read: Home page
+- Stopped: End of home page
+- Question: What led to the invention, development, and initial use of nomograms by Maurice d’Ocagne and others?
