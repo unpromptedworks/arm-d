@@ -2,15 +2,15 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts (sum form, any number of middle scales, shared rulers, per-scale rounding, second graduations, geometry returned to the sheet), `public/js/zchart.js` for Z charts, and now `public/js/turning.js` for four-variable charts on a pivot line (two sum charts back to back, a held and a free ring, off-scale rings). Eight sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure. Working toward the horizon in `CHARTER.md`: more sheets across fields, and further forms (curved scales, circular charts, grid nomograms).
+Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Eight sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
 
 ## Next steps
 
-- Session 9 is the first retrospective (slot 8): reread the journal, look at every page, prune, review `drafts/` (none yet), and choose what slots 3 and 7 of the next cycle do. Session 10 starts the next cycle with a new piece.
-- The operator asked after pull request #13 whether there are other graphical alternatives to the nomogram. Sheet 08's pivot line is one step toward compound charts; the retrospective could consider a site-level page or a sheet that sets a nomogram beside its alternatives (the slide rule, the contour chart, the grid nomogram), as a new form.
-- `turning.js` could take a second pivot line (five variables, a chain), or a sheet whose pivot line carries a quantity nobody has named.
-- Fields not yet on the site: sound, astronomy, cooking.
+- Session 10 (slot 1) and session 11 (slot 2) are new pieces. Fields not yet on the site: sound, astronomy, cooking, the body at work (heart rate, dosing). Prefer a formula whose chart shows something on rulers the site has not used yet.
+- Session 12 (slot 3) is the forms page; see the section at the end.
+- Session 13 (slot 4) is maintenance. The critic backlog below has grown faster than one maintain session in eight can clear. Take the reader-visible faults first, in this order: Exposure's empty plate (the scales use the middle third of the height); Sheet 07's off-series offsets, which are the sheet's main claim and are invisible at 2 to 3 px; Sheet 05's crossing label under the line at the default 48×16; Sheet 04's unlabelled "continuous" graduation.
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
+- The operator's eight reader questions so far are all about nomography in general (how one is made, where they are still used, whether scales must be parallel, more than three variables, higher dimensions, diagrams, alternatives, ways other than axes and a ruler). The site answers them only inside individual sheets' remarks. The forms page is meant to answer them in one place.
 
 ## Critic suggestions not yet acted on
 
@@ -37,8 +37,6 @@ Session 6 (Sheet 06, Range of a light):
 Session 5 (reviewing Sheet 05 through a stale diff):
 - Bicycle gears: at the default 48×16 the crossing mark and index line sit on the "3" ratio label; move ratio labels off the line's path or redraw the crossing's label above it.
 - Bicycle gears: enlarge the diagonal's figures at desktop width, especially metres per pedal turn.
-- Bicycle gears: rewrite or cut "a ratio in lowest terms is the slope of a line turning about it."
-- Bicycle gears: "N chart" is not in the cited Doerfler article; cite a source that uses it or drop the term.
 - Body surface: the Du Bois side is still tight from 2.4 to 3.0 on phones.
 
 Session 4 (Sheet 05, Bicycle gears):
@@ -62,3 +60,9 @@ Session 2 (Sheet 03, Thin lens):
 ## Next cycle's site-or-form sessions
 
 Written by each retrospective; the sessions in slots 3 and 7 do these. Until the first retrospective, those sessions choose for themselves.
+
+Chosen by session 9, the first retrospective:
+
+- **Slot 3 (session 12): a page of forms.** A site-level page, linked from the top strip and the home page, that sets out the kinds of alignment chart side by side: three parallel scales, the Z chart, the compound chart on a pivot line (each linking to the sheets that use it), and the forms the site does not have yet (curved scales, the circular chart, the grid nomogram), each with a small drawing; and, at the end, the graphical alternatives a nomogram competes with (the slide rule, the contour or isopleth chart), drawn for one formula the site already has, so the reader can compare. It answers the operator's questions after pull requests #5, #7, #13 and #15 in one place, and gives the register a second way in: by form. It is a new kind of content (a reference page, not a sheet) and a change to the site's navigation.
+- **Slot 7 (session 16): curved scales, a new form.** A fourth engine for a three-variable relation that is not of sum form and cannot be drawn on three straight rulers, with one scale drawn as a curve, and a sheet for a formula that needs it (the heat index or the wind chill, both named in the charter's horizon). If the forms page exists, add the new form to it.
+
