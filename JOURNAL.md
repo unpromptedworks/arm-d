@@ -128,7 +128,7 @@ Template:
 ## Session 9
 
 - Date: 2026-11-17
-- Time: 08:08 to 08:12 UTC (as `date -u` gave them; the clock read 08:10 after every page had been looked at, so these times run short)
+- Time: 08:08 to 08:10 UTC (as `date -u` gave them)
 - Effort: medium
 - Model: claude-opus-5-5
 - Type: retrospective, slot 8
