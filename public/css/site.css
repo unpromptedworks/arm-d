@@ -235,3 +235,16 @@ footer.foot {
 .nomo.turning .scales { pointer-events: none; }
 .nomo.turning .tick-label { paint-order: stroke; stroke: var(--sheet); stroke-width: 4px; stroke-linejoin: round; }
 .nomo .scale:not(.bare) > .pivot-axis { stroke-dasharray: none; }
+
+/* Sheet 09: measured orbits drawn thin under the index line, and the
+   buttons that set the rings to one of them. */
+.nomo .orbits line { stroke: var(--ink); stroke-width: 0.8; opacity: 0.28; }
+.nomo .orbits line.on { stroke-width: 1.2; opacity: 0.75; }
+.presets { margin: 1rem 0 0.4rem; }
+.presets p { margin: 0 0 0.45rem; display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: baseline; }
+.presets span { font: 600 0.78rem/1.2 var(--cond); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); min-width: 8.5rem; }
+.presets button { font: 500 0.95rem/1 var(--cond); color: var(--ink); background: var(--sheet); border: 1.5px solid var(--ink); border-radius: 0; padding: 0.3rem 0.55rem; cursor: pointer; }
+.presets button:hover { border-color: var(--red); }
+.presets button[aria-pressed="true"] { color: var(--red); border-color: var(--red); }
+.presets button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.readout dd sup { font-size: 0.6em; line-height: 0; }

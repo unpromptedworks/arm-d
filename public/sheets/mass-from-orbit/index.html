@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 09: Mass from an orbit · Index Line</title>
+<meta name="description" content="A working nomogram for Kepler's third law. Lay a line from a moon's distance to its period and read the mass of the body it circles; every moon of one planet draws a line through the same point.">
+<meta property="og:title" content="Sheet 09: Mass from an orbit · Index Line">
+<meta property="og:description" content="A working nomogram for Kepler's third law. Lay a line from a moon's distance to its period and read the mass of the body it circles; every moon of one planet draws a line through the same point.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 09 of 09</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 09, Mass from an orbit: <span>a planet is the point its moons’ lines go through.</span></p>
+    <label class="hold"><input type="checkbox" id="all" checked> Draw the eighteen measured orbits as thin lines</label>
+    <svg id="chart" aria-label="Kepler's third law nomogram: orbital distance on the left, orbital period on the right, the mass of the central body in the middle"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps. The thin lines are real orbits from NASA’s fact sheets; the darker ones belong to the body chosen below.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Mass from an orbit</h1>
+    <p class="lede">How heavy a planet or a star is, from how far one of its moons circles it and how long the circle takes. No one has put Jupiter on a balance. Its mass is read from its moons, and on this chart all four of them say the same thing at once.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Distance</dt><dd id="r-a">421 800 km</dd></div>
+      <div><dt>Period</dt><dd id="r-t">1.77 days</dd></div>
+      <div class="out"><dt>Mass</dt><dd id="r-m">318 Earths</dd></div>
+      <div><dt>In kilograms</dt><dd id="r-kg">1.90 × 10<sup>27</sup></dd></div>
+    </dl>
+    <p class="small" id="r-near">Less than 0.1 percent from Jupiter, 317.8 Earth masses.</p>
+
+    <div class="presets" id="presets" aria-label="Set the rings to a measured orbit"></div>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the moon’s distance from the centre of the body it circles, in thousands of kilometres (strictly, the semi-major axis of the orbit).</li>
+      <li>Set the right ring at the time it takes to go round once, in days, or in years on the ruler’s inner side.</li>
+      <li>Read the mass where the line crosses the middle scale: on its right in Earth masses, and on its left the bodies the measured orbits point to.</li>
+      <li>Or press a name above to set both rings to that orbit.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Press Io, then Europa, Ganymede and Callisto. The rings travel a long way: Callisto is four and a half times as far out as Io and takes more than nine times as long to go round. The crossing on the middle scale does not move. Four orbits, four different lines, one point, and the point is Jupiter: 318.1, 318.0, 317.9 and 317.9 Earth masses from the four of them. Now press Mimas and the five other moons of Saturn, and the four planets of the Sun. Each family of thin lines is a pencil, lines through one point, and there are six such points on the middle scale.</p>
+    <p>That picture is Kepler’s third law. Kepler published in 1619 that the cube of a planet’s distance from the Sun divided by the square of its period is the same number for every planet. A calculator shows that as a column of nearly equal quotients. The chart shows it as concurrence: the lines of a whole family meet, and what they meet at is a property of the body in the middle, not of any one orbit. Newton gave the point its name, since the constant is the central mass times the gravitational constant over 4π². Moving along a pencil is moving outward around one planet; jumping from pencil to pencil is changing planets.</p>
+    <p>Look where the middle scale stands: two fifths of the way from the distance ruler to the period ruler. The two outer rulers give five decades each to the same length of paper, and the mass goes as the cube of the distance and the inverse square of the period, so the scale sits nearer the quantity that counts three times. And it is short. A decade of mass takes one fifth of the paper of a decade of distance: from a Pluto to a Sun, eight decades, fits in a third of the height. Mass is a coarse thing to read and a sensitive thing to measure. Misjudge the distance by one percent and the mass moves three; misjudge the period by one percent and it moves two.</p>
+    <p>The same exponents put lines from different families nearly through one point on the period ruler. Titan takes 15.9 days to go round Saturn and Callisto 16.7 to go round Jupiter, so their lines almost meet on the right. On the left they part: Callisto is 1.54 times as far out. The cube of 1.54 is 3.66; take out the square of the slightly longer period, 1.10, and the 3.34 left over is the ratio of Jupiter’s mass to Saturn’s that the middle scale gives.</p>
+    <p>A line reads the mass of everything inside the orbit, the two bodies together. That hardly matters for Jupiter’s moons, but press Moon: the line reads 1.009 Earth masses, not 1, because the Moon is about one eighty-first of Earth and is weighed along with it. Press Charon and the line reads Pluto and Charon together, 0.00245 Earth masses, of which Charon is about a ninth. The bodies named on the middle scale are placed at these pair masses where a moon is heavy enough to matter.</p>
+    <p class="small">The constant is G = 6.6743 × 10⁻¹¹ m³ kg⁻¹ s⁻²; one Earth mass is 5.9722 × 10²⁴ kg. Orbits are taken as circles of radius equal to the semi-major axis, which Kepler’s law allows for any ellipse. Phobos, at 9 378 km and 0.319 days, reads 0.1076 Earth masses for Mars, and Deimos 0.1075; NASA gives 0.1074.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">M + m = 4π²a³/(GT²)</span>, Newton’s form of Kepler’s third law, with <span class="f">a</span> the semi-major axis and <span class="f">T</span> the period. In the chart’s units, <span class="f">M (Earth masses) = 1.3268 × 10⁻¹⁴ · a³ / T²</span> with <span class="f">a</span> in kilometres and <span class="f">T</span> in days. Its logarithm is a sum, <span class="f">log M = 3 log a − 2 log T + log 1.3268 × 10⁻¹⁴</span>, so the outer rulers are logarithmic, the period ruler runs downward to make the minus sign a plus, and the middle scale stands where the ratio of its distances to the outer rulers is 2 to 3.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>David R. Williams, NASA Space Science Data Coordinated Archive, planetary fact sheets: <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html">Jovian satellites</a>, <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html">Saturnian satellites</a>, <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html">Mars</a> (with Phobos and Deimos), <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html">Pluto</a> (with Charon), <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html">Moon</a>, <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html">Earth</a>, and the <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">planetary table</a>. Semi-major axes, sidereal periods and masses for every orbit and body on the sheet. Works of the United States government, in the public domain.</li>
+      <li>Wikipedia, “<a href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">Kepler’s laws of planetary motion</a>” (CC BY-SA 4.0): the third law, its publication in Kepler’s <i>Harmonice Mundi</i> (1619), and Newton’s form with the sum of the two masses. Facts only are used.</li>
+      <li>Wikipedia, “<a href="https://en.wikipedia.org/wiki/Gravitational_constant">Gravitational constant</a>” (CC BY-SA 4.0): G = 6.674 30 × 10⁻¹¹ m³ kg⁻¹ s⁻², the CODATA 2018 value.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>09, Mass from an orbit</dd>
+      <dt>Type</dt><dd>Three parallel scales, logarithmic, one ruler reversed</dd>
+      <dt>Range</dt><dd>Distance 3 000 to 300 million km; period 0.1 to 10 000 days; mass read from 0.0001 to a million Earth masses</dd>
+      <dt>Drawn</dt><dd>21 November 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram } from "/js/nomogram.js";
+
+// Ring values are logarithms: log10 of the distance in km on the left, and
+// minus log10 of the period in days on the right, so that short periods sit
+// at the top and the arrow keys move a ring the way they point.
+const K = 1.3268e-14;          // Earth masses per km³/day², 4π²/G in these units
+const ME = 5.9722e24;          // kg
+const lg = Math.log10;
+const sig = (x, n = 3) => +x.toPrecision(n);
+const group = (x) => { const [i, f] = String(x).split("."); return i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (f ? `.${f}` : ""); };
+const minus = (s) => String(s).replace("-", "−");
+
+// Orbits: name, body, semi-major axis (km), sidereal period (days). NASA NSSDCA.
+const ORBITS = [
+  ["Mercury", "Sun", 57.909e6, 87.969], ["Venus", "Sun", 108.21e6, 224.701],
+  ["Earth", "Sun", 149.598e6, 365.256], ["Mars", "Sun", 227.956e6, 686.98],
+  ["Moon", "Earth", 384400, 27.3217],
+  ["Phobos", "Mars", 9378, 0.31891], ["Deimos", "Mars", 23459, 1.26244],
+  ["Io", "Jupiter", 421800, 1.769138], ["Europa", "Jupiter", 671100, 3.551181],
+  ["Ganymede", "Jupiter", 1070400, 7.154553], ["Callisto", "Jupiter", 1882700, 16.689017],
+  ["Mimas", "Saturn", 185520, 0.9424218], ["Enceladus", "Saturn", 238020, 1.370218],
+  ["Tethys", "Saturn", 294660, 1.887802], ["Dione", "Saturn", 377400, 2.736915],
+  ["Rhea", "Saturn", 527040, 4.5175], ["Titan", "Saturn", 1221870, 15.945421],
+  ["Charon", "Pluto", 19596, 6.3872],
+];
+// Bodies at their masses in Earth masses (NASA), with the moon added where
+// it is heavy enough to show: Earth + Moon, Pluto + Charon.
+const BODIES = [
+  ["Sun", 1988400 / 5.9722], ["Jupiter", 1898.13 / 5.9722], ["Saturn", 568.32 / 5.9722],
+  ["Earth + Moon", (5.9722 + 0.07346) / 5.9722], ["Mars", 0.64169 / 5.9722],
+  ["Pluto + Charon", (0.01303 + 0.001586) / 5.9722],
+];
+const bodyMass = Object.fromEntries(BODIES);
+bodyMass.Earth = bodyMass["Earth + Moon"];
+bodyMass.Pluto = bodyMass["Pluto + Charon"];
+
+const aLo = lg(3000), aHi = lg(3e8);
+const aMajor = [], aMinor = [];
+for (let e = 3; e <= 8; e++) for (const k of [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+  const v = lg(k * 10 ** e);
+  if (v < aLo - 1e-9 || v > aHi + 1e-9) continue;
+  (k === 1 || k === 3 ? aMajor : aMinor).push(v);
+}
+const aLabel = (v) => group(sig(10 ** v / 1000, 2));
+
+const tMajor = [], tMinor = [];
+for (let e = -1; e <= 4; e++) for (const k of [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+  if (e === 4 && k > 1) continue;
+  ((k === 1 || k === 2 || k === 5) ? tMajor : tMinor).push(-lg(k * 10 ** e));
+}
+const tLabel = (v) => group(sig(10 ** -v, 2));
+const yearsMajor = [0.2, 0.5, 1, 2, 5, 10, 20];
+const yearsMinor = [0.3, 0.4, 3, 4, 15];
+
+const mMajor = [], mMinor = [];
+for (let e = -4; e <= 6; e++) { mMajor.push(10 ** e); if (e < 6) mMinor.push(2 * 10 ** e, 5 * 10 ** e); }
+const mLabel = (m) => (m < 1 ? String(sig(m, 1)) : group(sig(m, 1)));
+
+const svg = document.getElementById("chart");
+let chosen = "Io", ready = false;
+const chart = nomogram(svg, {
+  width: 600, height: 820, bottomPad: 72, xA: 120, xC: 480,
+  A: {
+    label: "Distance", unit: "thousand km", min: aLo, max: aHi, step: 0.01, value: lg(421800),
+    f: (v) => v, fmt: aLabel,
+    ticks: { major: aMajor, minor: aMinor, sparse: aMajor.filter((v) => Math.abs(v - Math.round(v)) > 0.1) },
+  },
+  C: {
+    label: "Period", unit: "days", min: -4, max: 1, step: 0.01, value: -lg(1.769138),
+    f: (v) => v, fmt: tLabel,
+    ticks: { major: tMajor, minor: tMinor, sparse: tMajor.filter((v) => Math.abs(v - Math.round(v)) > 0.1) },
+    inner: { label: "years", to: (y) => -lg(y * 365.256), fmt: String, ticks: { major: yearsMajor, minor: yearsMinor } },
+  },
+  mids: [{
+    label: "Mass", unit: "Earth masses", g: lg, alpha: 3, beta: 2, gamma: lg(K),
+    min: 1e-13, max: 1e15, side: "right", fmt: mLabel,
+    ticks: { major: mMajor, minor: mMinor, sparse: mMajor.filter((m, i) => i % 2) },
+    inner: {
+      to: (i) => BODIES[i][1], fmt: (i) => BODIES[i][0],
+      ticks: { major: BODIES.map((_, i) => i), minor: [] },
+    },
+  }],
+}, show);
+
+// Jupiter and Saturn stand only half a decade of mass apart: part their names.
+for (const t of svg.querySelectorAll(".tick-label.inner")) {
+  const dy = { Jupiter: -4, Saturn: 4 }[t.textContent];
+  if (dy) t.setAttribute("y", +t.getAttribute("y") + dy);
+}
+
+// The measured orbits, drawn thin under the index line.
+const NS = "http://www.w3.org/2000/svg";
+const orbits = document.createElementNS(NS, "g");
+orbits.setAttribute("class", "orbits");
+svg.insertBefore(orbits, chart.line);
+const lines = ORBITS.map(([name, body, a, T]) => {
+  const ln = document.createElementNS(NS, "line");
+  const y1 = chart.posA(lg(a)), y2 = chart.posC(-lg(T));
+  ln.setAttribute("x1", chart.xA); ln.setAttribute("y1", y1);
+  ln.setAttribute("x2", chart.xC); ln.setAttribute("y2", y2);
+  ln.dataset.body = body;
+  orbits.appendChild(ln);
+  return ln;
+});
+const allBox = document.getElementById("all");
+const showOrbits = () => { orbits.style.display = allBox.checked ? "" : "none"; };
+allBox.addEventListener("change", showOrbits);
+showOrbits();
+
+function mark() {
+  const body = ORBITS.find((o) => o[0] === chosen)?.[1];
+  for (const ln of lines) ln.classList.toggle("on", ln.dataset.body === body);
+  for (const b of document.querySelectorAll("#presets button")) b.setAttribute("aria-pressed", b.dataset.name === chosen);
+}
+
+// Buttons, one group for each body.
+const presets = document.getElementById("presets");
+for (const body of ["Jupiter", "Saturn", "Sun", "Earth", "Mars", "Pluto"]) {
+  const row = document.createElement("p");
+  const head = document.createElement("span");
+  head.textContent = body === "Sun" ? "Round the Sun" : `Round ${body}`;
+  row.appendChild(head);
+  for (const [name, b, a, T] of ORBITS.filter((o) => o[1] === body)) {
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.textContent = name; btn.dataset.name = name;
+    btn.addEventListener("click", () => { chosen = name; chart.set(lg(a), -lg(T)); });
+    row.appendChild(btn);
+  }
+  presets.appendChild(row);
+}
+
+function show(la, nt) {
+  const a = 10 ** la, T = 10 ** -nt, M = (K * a ** 3) / T ** 2;
+  // A ring moved by hand leaves the named orbit behind.
+  const o = ORBITS.find((x) => x[0] === chosen);
+  if (o && (Math.abs(lg(o[2]) - la) > 1e-6 || Math.abs(-lg(o[3]) - nt) > 1e-6)) chosen = null;
+  document.getElementById("r-a").textContent = `${group(sig(a, 4))} km`;
+  document.getElementById("r-t").textContent = T >= 730 ? `${sig(T / 365.256, 3)} years` : `${sig(T, 3)} days`;
+  document.getElementById("r-m").textContent = M >= 1e6 || M < 1e-4
+    ? `${minus(M.toExponential(1)).replace(/e\+?/, " × 10^")} Earths` : `${group(sig(M, 3))} Earths`;
+  const [mant, ex] = (M * ME).toExponential(2).split("e");
+  document.getElementById("r-kg").innerHTML = `${mant} × 10<sup>${minus(ex.replace("+", ""))}</sup>`;
+  let best = null;
+  for (const [name, m] of BODIES) {
+    const r = Math.abs(lg(M / m));
+    if (!best || r < best[2]) best = [name, m, r];
+  }
+  const pct = (10 ** best[2] - 1) * 100;
+  const what = `${best[0]}, ${group(sig(best[1], best[1] < 0.01 ? 3 : 4))} Earth masses`;
+  document.getElementById("r-near").textContent = pct < 5
+    ? (pct < 0.1 ? `Less than 0.1 percent from ${what}.` : `Within ${sig(pct, 2)} percent of ${what}.`)
+    : `No body on the sheet has this mass. The nearest is ${what}; this line reads ${sig(M / best[1], 2)} times that.`;
+  if (ready) mark();
+}
+ready = true;
+mark();
+</script>
+</body>
+</html>

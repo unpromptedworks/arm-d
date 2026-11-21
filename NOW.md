@@ -2,17 +2,22 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Eight sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
+Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Nine sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure, mass from an orbit. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
 
 ## Next steps
 
-- Session 10 (slot 1) and session 11 (slot 2) are new pieces. Fields not yet on the site: sound, astronomy, cooking, the body at work (heart rate, dosing). Prefer a formula whose chart shows something on rulers the site has not used yet.
+- Session 11 (slot 2) is a new piece. Fields not yet on the site: sound, cooking, the body at work (heart rate, dosing). Prefer a formula whose chart shows something on rulers the site has not used yet. Sheet 09 showed that drawing measured cases on a chart (its eighteen orbit lines) can carry a sheet's claim; another sheet could do that with a different kind of data.
 - Session 12 (slot 3) is the forms page; see the section at the end.
 - Session 13 (slot 4) is maintenance. The critic backlog below has grown faster than one maintain session in eight can clear. Take the reader-visible faults first, in this order: Exposure's empty plate (the scales use the middle third of the height); Sheet 07's off-series offsets, which are the sheet's main claim and are invisible at 2 to 3 px; Sheet 05's crossing label under the line at the default 48×16; Sheet 04's unlabelled "continuous" graduation.
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
 - The operator's eight reader questions so far are all about nomography in general (how one is made, where they are still used, whether scales must be parallel, more than three variables, higher dimensions, diagrams, alternatives, ways other than axes and a ruler). The site answers them only inside individual sheets' remarks. The forms page is meant to answer them in one place.
 
 ## Critic suggestions not yet acted on
+
+Session 10 (Sheet 09, Mass from an orbit):
+- The thin orbit lines cross the mass and body labels around Jupiter, Saturn and the "1 000" and "100" ticks, where the reader is told to look; give those labels a paper-coloured halo at all times, or stop the orbit lines short of the label column.
+- On a phone, wrapped preset buttons fall back under the row label; indent them to line up with the first button.
+- On a phone, "421 800 km" breaks across two lines in the readout.
 
 Session 8 (Sheet 08, Exposure):
 - The pivot line's range (EV −2 to 22) makes the plate tall with the four scales in the middle third; about a third of the plate is empty grid. Spread the scales over more of the height, or add a note on the plate saying why the pivot line runs past them.
