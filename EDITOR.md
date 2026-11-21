@@ -67,3 +67,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Home page
 - Stopped: End of home page
 - Question: What led to the invention, development, and initial use of nomograms by Maurice d’Ocagne and others?
+
+## Pull request #19, 2026-11-21
+
+- Read: Mass from an orbit
+- Stopped: Beginning of remarks
+- Question: What did scientists use before nomograms?
