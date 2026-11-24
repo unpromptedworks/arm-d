@@ -73,3 +73,9 @@ After a pull request merges, the operator reads the site and writes a reader's n
 - Read: Mass from an orbit
 - Stopped: Beginning of remarks
 - Question: What did scientists use before nomograms?
+
+## Pull request #21, 2026-11-24
+
+- Read: Boiling and Egg page
+- Stopped: Just the top of the page.
+- Question: Are there any really interesting, unexpected, surprising usage of nomograms?
