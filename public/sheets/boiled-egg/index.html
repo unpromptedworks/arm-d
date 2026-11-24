@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sheet 10: Boiling an egg · Index Line</title>
+<meta name="description" content="A working nomogram for Charles Williams's boiled-egg formula. Lay a line from the egg's weight to the minutes in the pan and read how hot the yolk's edge gets, for an egg from the fridge and one from the room.">
+<meta property="og:title" content="Sheet 10: Boiling an egg · Index Line">
+<meta property="og:description" content="A working nomogram for Charles Williams's boiled-egg formula. Lay a line from the egg's weight to the minutes in the pan and read how hot the yolk's edge gets, for an egg from the fridge and one from the room.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <span>Sheet 10 of 10</span>
+</header>
+<main>
+<article class="sheet">
+  <figure class="chart">
+    <p class="chart-head">Sheet 10, Boiling an egg: <span>the fridge costs the same minute and a quarter for every yolk.</span></p>
+    <svg id="chart" class="egg" aria-label="Boiled egg nomogram: egg weight on the left, minutes in boiling water on the right, the temperature at the edge of the yolk in the middle, graduated for an egg from the fridge on its left and from the room on its right"></svg>
+    <figcaption>Drag a red ring, or tab to it and use the arrow keys. Shift moves ten steps. The brackets beside the weight ruler are the European size classes.</figcaption>
+  </figure>
+
+  <div class="text">
+    <h1>Boiling an egg</h1>
+    <p class="lede">How long an egg must sit in boiling water for the edge of its yolk to reach a chosen temperature. The middle scale is graduated twice, once for an egg straight from the fridge and once for one at room temperature, and the gap between the two graduations is the whole cost of the fridge.</p>
+
+    <dl class="readout" aria-live="polite">
+      <div><dt>Egg</dt><dd id="r-m">57 g</dd></div>
+      <div><dt>In the pan</dt><dd id="r-t">4 min 30 s</dd></div>
+      <div class="out"><dt>Yolk edge, from fridge</dt><dd id="r-f">62.8 °C</dd></div>
+      <div class="out"><dt>From the room</dt><dd id="r-r">69.4 °C</dd></div>
+    </dl>
+    <p class="small" id="r-note">Both values are the formula below, solved exactly for the line you have drawn: the same egg and the same minutes, started at 4 °C or at 21 °C.</p>
+
+    <div class="presets" id="presets" aria-label="Set the time for a yolk temperature"></div>
+
+    <h2>Directions</h2>
+    <ol class="directions">
+      <li>Set the left ring at the egg’s weight in grams, shell and all. The brackets beside the ruler are the weight classes printed on European boxes, small to very large.</li>
+      <li>Set the right ring at the minutes the egg will spend in water that is already boiling.</li>
+      <li>Read the temperature at the edge of the yolk where the line crosses the middle scale: on its left for an egg from the fridge, at 4 °C; on its right for an egg left out at 21 °C.</li>
+      <li>To go the other way, choose a yolk above. The right ring moves to the time that gives it, for the weight you have set.</li>
+    </ol>
+
+    <h2>Remarks</h2>
+    <p>Look at the two graduations on the middle scale before you read either. The 63 on the fridge side stands level with 69.6 on the room side: in the time it takes to bring a cold egg’s yolk edge to 63 °C, the starting point of a soft yolk, the same egg from the counter would have reached 70, where the yolk is a soft, waxy solid. Then look how the offset changes going up the scale. At the bottom the two graduations are far apart, and near 80 they are close. That is the fridge’s cost in proportion: 40 percent more time at 63 °C, 18 percent more at 80 °C. In minutes it does not change at all. For a 57 g egg, starting at 4 °C instead of 21 °C costs 78 seconds whatever yolk you want, because the starting temperature enters the formula as a term added to the time, scaled only by the egg’s size. Press the yolks above for one egg and compare the two rows: every pair of times is 1 minute 18 seconds apart.</p>
+    <p>Now look at the spacing of the yolk degrees. They spread as they climb. On the fridge side a degree at 63 costs 11 seconds of boiling; a degree at 80 costs 20. The soft egg is the hard one to time. A quarter of a minute too long moves a soft yolk by more than a degree; from liquid at 62 °C to the start of setting at 64 is 22 seconds. A hard-boiled egg forgives twice the error. The ticks crowd towards the bottom because the formula takes the logarithm of the yolk’s remaining distance from the boiling point: each degree nearer 100 is a larger fraction of what is left.</p>
+    <p>The weight ruler is the long one, and it moves the answer least. Its full height, 35 to 85 grams, is more than a doubling of the egg, and it changes the time by 1.8 times; the time goes as the two-thirds power of the weight, because heat has to cross the egg’s radius and the radius grows only as the cube root of the weight. That is why the middle scale stands three quarters of the way across, close to the time ruler. In practice one size class, ten grams, is worth about three degrees at the yolk at 63 °C, or 32 seconds. A medium egg cooked to a large egg’s time comes out about three degrees firmer: the difference between a yolk that runs and one that has begun to set.</p>
+    <p>So the order of things that matter, read from the chart, is: the yolk you want, then whether the egg came from the fridge, then its size. A single number of minutes, given without the other two, fixes all three without saying so.</p>
+    <p class="small">The formula treats the egg as a sphere of uniform white, put into water at a full boil at sea level, and reads the edge of the yolk, not its centre. Williams’s page reports that it underestimates the extra time needed at altitude, where water boils below 100 °C, and the chart is drawn for 100 °C only. For a 57 g egg from the fridge it gives 4 minutes 32 seconds to reach 63 °C, 3 minutes 59 seconds for a 47 g egg and 5 minutes 3 seconds for a 67 g egg; the page rounds these to 4½, 4 and 5. From 21 °C it gives 3 minutes 14 seconds for the 57 g egg, where the page says about 3½.</p>
+
+    <h2>Formula</h2>
+    <p><span class="f">t = 0.451 · M<sup>2/3</sup> · ln[0.76 (T<sub>egg</sub> − T<sub>water</sub>) / (T<sub>yolk</sub> − T<sub>water</sub>)]</span>, with <span class="f">t</span> in minutes and <span class="f">M</span> in grams; Charles Williams derived it from the cooling of a sphere, keeping the first term of the series solution, which is where the 0.76 comes from.</p>
+    <p>The constant is <span class="f">cρ<sup>1/3</sup> / (Kπ²(4π/3)<sup>2/3</sup>)</span> for the egg’s specific heat <span class="f">c</span>, density <span class="f">ρ</span> and thermal conductivity <span class="f">K</span>; 0.451 is the value that reproduces the worked times on Williams’s page. Write the logarithm as <span class="f">K<sub>T</sub></span>; then <span class="f">log K<sub>T</sub> = log t − ⅔ log M − log 0.451</span>, a sum.</p>
+    <p>The outer rulers are logarithmic, the weight ruler runs downward to turn its minus sign into a plus, and the middle scale stands where its distances to the outer rulers are in the ratio of ⅔ to 1 once each ruler’s length per decade is allowed for.</p>
+    <p>With <span class="f">T<sub>water</sub> = 100 °C</span>, the fridge graduation is <span class="f">K<sub>T</sub> = ln[72.96 / (100 − T<sub>yolk</sub>)]</span> and the room graduation <span class="f">ln[60.04 / (100 − T<sub>yolk</sub>)]</span>. They differ by <span class="f">ln(96/79) = 0.195</span> everywhere, a constant amount of <span class="f">K<sub>T</sub></span> and so a constant number of minutes for a given egg, <span class="f">0.088 M<sup>2/3</sup></span>.</p>
+
+    <h2>Sources</h2>
+    <ul class="sources">
+      <li>Charles D. H. Williams, University of Exeter, “<a href="https://www.exeter.ac.uk/research-centres/theoretical-physics/boiling-an-egg/">The science of boiling an egg</a>”, grown from a letter in <i>New Scientist</i>’s Last Word column in 1998: the formula and its assumptions, the yolk-edge temperature of 63 °C, the worked times for 47, 57 and 67 g eggs from 4 °C and 21 °C, and the remark on altitude. Facts and the formula only are used.</li>
+      <li>Khymos, “<a href="https://khymos.org/2009/04/09/towards-the-perfect-soft-boiled-egg/">Towards the perfect soft boiled egg</a>” (2009): the yolk’s texture at the temperatures on the buttons, liquid at 62 °C, beginning to set at 64 °C, soft solid at 66 °C, soft and waxy at 70 °C. Facts only are used.</li>
+      <li>Commission Regulation (EC) No 589/2008, <a href="https://legislation.gov.uk/eur/2008/589/article/4/data.html">Article 4</a>, grading of Class A eggs by weight: XL 73 g and over, L 63 to 73 g, M 53 to 63 g, S under 53 g. The regulation has since been replaced by Delegated Regulation (EU) 2023/2465. Facts only are used.</li>
+    </ul>
+
+    <dl class="titleblock">
+      <dt>Sheet</dt><dd>10, Boiling an egg</dd>
+      <dt>Type</dt><dd>Three parallel scales, logarithmic, weight ruler reversed, middle scale graduated twice</dd>
+      <dt>Range</dt><dd>Weight 35 to 85 g; time 2 to 14 minutes in water at 100 °C; yolk edge 56 to 86 °C</dd>
+      <dt>Drawn</dt><dd>24 November 2026</dd>
+    </dl>
+  </div>
+</article>
+</main>
+<footer class="foot">
+  <a href="/">Index Line: working nomograms</a>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module">
+import { nomogram, range, invert } from "/js/nomogram.js";
+
+const lg = Math.log10;
+const C = 0.451;                       // minutes per gram^(2/3)
+const FRIDGE = 4, ROOM = 21, WATER = 100;
+// The yolk temperature an egg from the room reaches in the time a fridge
+// egg reaches u, and back: equal values of (T_water - T_egg)/(T_water - T_yolk).
+const ratio = (WATER - ROOM) / (WATER - FRIDGE);
+const roomOf = (u) => WATER - ratio * (WATER - u);
+const fridgeOf = (r) => WATER - (WATER - r) / ratio;
+const KT = (Te, Ty) => Math.log((0.76 * (WATER - Te)) / (WATER - Ty));
+const minutes = (M, Te, Ty) => C * M ** (2 / 3) * KT(Te, Ty);
+const clock = (t) => {
+  let m = Math.floor(t), s = Math.round((t - m) * 60);
+  if (s === 60) { m += 1; s = 0; }
+  return s ? `${m} min ${s} s` : `${m} min`;
+};
+
+let state = { M: 57, t: 4.5 };
+const svg = document.getElementById("chart");
+const chart = nomogram(svg, {
+  width: 600, height: 800, xA: 100, xC: 520, bottomPad: 64,
+  A: {
+    label: "Egg", unit: "grams", min: 35, max: 85, lo: 85, hi: 35, step: 1, value: 57,
+    f: (M) => -lg(M), fmt: String,
+    ticks: { major: range(35, 85, 5), minor: range(35, 85, 1), sparse: range(35, 85, 10) },
+  },
+  C: {
+    label: "Time", unit: "minutes", nameAnchor: "middle", min: 2, max: 14, step: 1 / 12, value: 4.5,
+    f: lg, fmt: String,
+    snap: (t) => Math.round(t * 12) / 12,
+    ticks: { major: range(2, 14, 1), minor: range(2, 14, 0.25), sparse: [3, 5, 7, 9, 11, 13] },
+  },
+  mids: [{
+    label: "Yolk edge", name: ["Yolk edge", "°C"], unit: "", side: "left", nameAtEnds: true, nameDy: -26,
+    g: (u) => lg(KT(FRIDGE, u)), alpha: 2 / 3, beta: 1, gamma: -lg(C),
+    min: 30, max: 99, fmt: String,
+    ticks: { major: range(56, 86, 2), minor: range(56, 86, 1), sparse: range(58, 86, 4) },
+    inner: {
+      to: fridgeOf, fmt: String,
+      ticks: { major: range(62, 86, 2), minor: range(62, 86, 1) },
+    },
+  }],
+}, show);
+
+// Which graduation is which, over the top of the middle scale.
+{
+  const m = chart.mids[0], y = m.y(86) - 12;
+  for (const [txt, dx, anchor] of [["fridge", -8, "end"], ["room", 8, "start"]]) {
+    const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    t.setAttribute("x", m.x + dx); t.setAttribute("y", y);
+    t.setAttribute("text-anchor", anchor); t.setAttribute("class", "scale-name start");
+    t.textContent = txt;
+    svg.appendChild(t);
+  }
+}
+
+// Size classes as brackets beside the weight ruler.
+const NS = "http://www.w3.org/2000/svg";
+const classes = document.createElementNS(NS, "g");
+classes.setAttribute("class", "sizes");
+svg.insertBefore(classes, chart.line);
+for (const [name, lo, hi] of [["S", 35, 53], ["M", 53, 63], ["L", 63, 73], ["XL", 73, 85]]) {
+  const x = chart.xA + 14, y1 = chart.posA(-lg(lo)) + (lo === 35 ? 0 : 2), y2 = chart.posA(-lg(hi)) - (hi === 85 ? 0 : 2);
+  const p = document.createElementNS(NS, "path");
+  p.setAttribute("d", `M${x + 6} ${y1} H${x} V${y2} H${x + 6}`);
+  classes.appendChild(p);
+  const t = document.createElementNS(NS, "text");
+  t.setAttribute("x", x + 10); t.setAttribute("y", (y1 + y2) / 2 + 5);
+  t.textContent = name;
+  classes.appendChild(t);
+}
+
+function show(M, t, [u]) {
+  state = { M, t };
+  const fmt1 = (v) => (v >= 99 ? "over 99" : v.toFixed(1));
+  document.getElementById("r-m").textContent = `${M} g`;
+  document.getElementById("r-t").textContent = clock(t);
+  document.getElementById("r-f").textContent = `${fmt1(u)} °C`;
+  document.getElementById("r-r").textContent = `${fmt1(roomOf(u))} °C`;
+  const toll = minutes(M, FRIDGE, 63) - minutes(M, ROOM, 63);
+  document.getElementById("r-note").textContent =
+    `Both values are the formula below, solved exactly for the line you have drawn: the same ${M} g egg and the same minutes, started at 4 °C or at 21 °C. For this egg the fridge costs ${Math.round(toll * 60)} seconds at any yolk temperature.`;
+  for (const b of document.querySelectorAll("#presets button")) {
+    const want = minutes(M, +b.dataset.te, +b.dataset.ty);
+    b.setAttribute("aria-pressed", Math.abs(want - t) < 1e-9);
+  }
+}
+
+// Buttons: set the time for a yolk, for the weight on the left ruler.
+const YOLKS = [[62, "liquid"], [64, "setting"], [66, "soft"], [70, "waxy"]];
+const presets = document.getElementById("presets");
+for (const [head, Te] of [["From the fridge", FRIDGE], ["From the room", ROOM]]) {
+  const row = document.createElement("p");
+  const h = document.createElement("span");
+  h.textContent = head;
+  row.appendChild(h);
+  for (const [Ty, word] of YOLKS) {
+    const btn = document.createElement("button");
+    btn.type = "button"; btn.textContent = `${Ty} °C ${word}`;
+    btn.dataset.te = Te; btn.dataset.ty = Ty;
+    btn.addEventListener("click", () => {
+      const t = Math.min(14, Math.max(2, minutes(state.M, Te, Ty)));
+      chart.set(state.M, t);
+    });
+    row.appendChild(btn);
+  }
+  presets.appendChild(row);
+}
+show(state.M, state.t, [chart.mids[0].read(state.M, state.t)]);
+</script>
+</body>
+</html>

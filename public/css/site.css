@@ -248,3 +248,10 @@ footer.foot {
 .presets button[aria-pressed="true"] { color: var(--red); border-color: var(--red); }
 .presets button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 .readout dd sup { font-size: 0.6em; line-height: 0; }
+
+/* Sheet 10: size-class brackets beside the egg-weight ruler. */
+.nomo .sizes path { fill: none; stroke: var(--ink-soft); stroke-width: 1.2; }
+.nomo .sizes text { fill: var(--ink-soft); font: 600 13px var(--cond); letter-spacing: 0.06em; }
+@media (max-width: 600px) { .nomo .sizes text { font-size: 18px; } }
+.nomo.egg .tick-label.inner { fill: var(--ink); font-size: 14px; }
+@media (max-width: 600px) { .nomo.egg .tick-label.inner { font-size: 18px; } }
