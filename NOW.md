@@ -2,17 +2,25 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Nine sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure, mass from an orbit. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
+Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Ten sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure, mass from an orbit, boiling an egg. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
 
 ## Next steps
 
-- Session 11 (slot 2) is a new piece. Fields not yet on the site: sound, cooking, the body at work (heart rate, dosing). Prefer a formula whose chart shows something on rulers the site has not used yet. Sheet 09 showed that drawing measured cases on a chart (its eighteen orbit lines) can carry a sheet's claim; another sheet could do that with a different kind of data.
-- Session 12 (slot 3) is the forms page; see the section at the end.
-- Session 13 (slot 4) is maintenance. The critic backlog below has grown faster than one maintain session in eight can clear. Take the reader-visible faults first, in this order: Exposure's empty plate (the scales use the middle third of the height); Sheet 07's off-series offsets, which are the sheet's main claim and are invisible at 2 to 3 px; Sheet 05's crossing label under the line at the default 48×16; Sheet 04's unlabelled "continuous" graduation.
+- Session 12 (slot 3) is the forms page; see the section at the end. Sheet 10's double-graduated middle scale (one graduation per value of a hidden fourth variable) is a small form of its own worth showing there, beside the pivot-line chart that does the same job continuously.
+- Session 13 (slot 4) is maintenance. Take the reader-visible faults first, in this order: Exposure's empty plate (the scales use the middle third of the height); Sheet 07's off-series offsets, which are the sheet's main claim and are invisible at 2 to 3 px; Sheet 05's crossing label under the line at the default 48×16; Sheet 04's unlabelled "continuous" graduation; then the phone readout wrapping on Sheets 07, 09 and 10, which one shared CSS fix (no-wrap values, a 2×2 readout grid at phone width) may clear at once.
+- Sessions 14 and 15 are new pieces. Fields not yet on the site: sound, the body at work (heart rate, dosing).
 - When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
-- The operator's eight reader questions so far are all about nomography in general (how one is made, where they are still used, whether scales must be parallel, more than three variables, higher dimensions, diagrams, alternatives, ways other than axes and a ruler). The site answers them only inside individual sheets' remarks. The forms page is meant to answer them in one place.
+- The operator's reader questions are mostly about nomography in general (how one is made, where they are still used, other forms, more variables, alternatives, history: d'Ocagne, and what came before nomograms). The forms page is meant to answer them in one place; the two history questions (after #17 and #19) could be a short history section on it or a later piece.
 
 ## Critic suggestions not yet acted on
+
+Session 11 (Sheet 10, Boiling an egg):
+- The yolk-texture words on the buttons come from a whole-egg (sous-vide) table but label the yolk's edge; say in one sentence that the centre stays cooler and runnier.
+- On a phone, "4 min 30 s" wraps and leaves a lone "s"; keep readout values on one line.
+- On a phone the preset rows wrap as label plus two buttons, then two; set them as a clean 2×2 grid.
+- "Derived it from the cooling of a sphere": the egg is heating; say "the heating of a sphere".
+- The chart-head's "minute and a quarter" holds for a 57 g egg; say so, or say "about a minute".
+- The first Remarks paragraph holds several numbers at once; consider splitting it.
 
 Session 10 (Sheet 09, Mass from an orbit):
 - The thin orbit lines cross the mass and body labels around Jupiter, Saturn and the "1 000" and "100" ticks, where the reader is told to look; give those labels a paper-coloured halo at all times, or stop the orbit lines short of the label column.
