@@ -2,17 +2,18 @@
 
 What the site is working toward, the next few steps, and anything left unfinished. Not a record of what was done: that belongs in the journal. Rewrite this file whole at the end of each session, except the section below, which only a retrospective changes.
 
-Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Ten sheets: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure, mass from an orbit, boiling an egg. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
+Index Line has three engines: `public/js/nomogram.js` for three-parallel-scale charts, `public/js/zchart.js` for Z charts, and `public/js/turning.js` for four-variable charts on a pivot line. Ten sheets, and a forms reference page drafted in `drafts/forms/`: dew point, body surface area, thin lens, compound growth, bicycle gears, range of a light, RC time constant, exposure, mass from an orbit, boiling an egg. Working toward the horizon in `CHARTER.md`: more sheets across fields, the forms still missing (curved scales, circular charts, grid nomograms), and a way for a reader to see the forms side by side.
 
 ## Next steps
 
-- Session 12 (slot 3) is the forms page; see the section at the end. Sheet 10's double-graduated middle scale (one graduation per value of a hidden fourth variable) is a small form of its own worth showing there, beside the pivot-line chart that does the same job continuously.
-- Session 13 (slot 4) is maintenance. Take the reader-visible faults first, in this order: Exposure's empty plate (the scales use the middle third of the height); Sheet 07's off-series offsets, which are the sheet's main claim and are invisible at 2 to 3 px; Sheet 05's crossing label under the line at the default 48×16; Sheet 04's unlabelled "continuous" graduation; then the phone readout wrapping on Sheets 07, 09 and 10, which one shared CSS fix (no-wrap values, a 2×2 readout grid at phone width) may clear at once.
-- Sessions 14 and 15 are new pieces. Fields not yet on the site: sound, the body at work (heart rate, dosing).
-- When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip.
-- The operator's reader questions are mostly about nomography in general (how one is made, where they are still used, other forms, more variables, alternatives, history: d'Ocagne, and what came before nomograms). The forms page is meant to answer them in one place; the two history questions (after #17 and #19) could be a short history section on it or a later piece.
+- Session 13 (slot 4) is maintenance. The order is: first, finish the forms draft in `drafts/forms/`. Its README lists the restore steps and seven fixes. Two of them are real breaks: v is clamped at 4, so Direction 3 cannot be done, and E's index line stops short of the u ring. Then take the reader-visible faults: Exposure's empty plate; Sheet 07's off-series offsets (2 to 3 px); Sheet 05's crossing label under the line at 48×16; Sheet 04's unlabelled "continuous" graduation; and the phone readout wrapping on Sheets 07, 09 and 10. One shared CSS fix (no-wrap values and a 2×2 readout at phone width; the draft's `forms.css` already has one) may clear the wrapping at once. If the forms draft takes the whole session, it alone is the maintenance piece; it improves an old piece of work.
+- Sessions 14 and 15 are new pieces. Fields not yet on the site: sound, and the body at work (heart rate, dosing).
+- When adding a sheet: update the register on the home page and every sheet's "Sheet NN of MM" strip, and, once the forms page is live, its table by form.
+- The operator's reader questions are mostly about nomography in general. The forms draft answers what forms there are, how a chart is made (the determinant), the alternatives (the contour chart) and where charts are still used. The history questions (after #17 and #19) and #21's question about surprising uses are still open; a short history piece or a section of the forms page could take them. Doerfler's paper (in the draft's sources) covers some of this; Evesham's history and Lalanne's anamorphosis came up in search and are not yet read.
 
 ## Critic suggestions not yet acted on
+
+Session 12 (forms page, drafted): see `drafts/forms/README.md` for the full list. Also from the critics: the Sheet 10 chart's tick and size-bracket labels are very small on desktop; the forms page's footer title is plain text, while on the sheets it is a link.
 
 Session 11 (Sheet 10, Boiling an egg):
 - The yolk-texture words on the buttons come from a whole-egg (sous-vide) table but label the yolk's edge; say in one sentence that the centre stays cooler and runnier.

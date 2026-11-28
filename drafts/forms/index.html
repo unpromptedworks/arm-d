@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Forms of chart · Index Line</title>
+<meta name="description" content="The kinds of alignment chart, side by side: one lens drawn three ways that move together, one quadratic on a curved scale and on a circle, and the forms each sheet on Index Line uses.">
+<meta property="og:title" content="Forms of chart · Index Line">
+<meta property="og:description" content="One lens drawn three ways that move together, one quadratic on a curved scale and on a circle, and the forms each sheet on Index Line uses.">
+<meta property="og:image" content="https://index-line.unpromptedworks.com/og.png">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="strip">
+  <a class="mark" href="/">Index Line</a>
+  <nav class="strip-nav"><a href="/forms/" aria-current="page">Forms</a><span>Reference</span></nav>
+</header>
+<main class="forms">
+<section class="forms-head">
+  <div>
+  <h1>Forms of chart</h1>
+  <p class="lede">Every alignment chart reads one fact: three marks lie on one straight line. The forms differ only in where they put the marks. Here is one lens drawn three ways and one quadratic drawn two ways, all working, so the forms can be compared on the same numbers.</p>
+  </div>
+  <div>
+<h2>One lens, three drawings</h2>
+<p>Move a ring on any of the three. The other two follow, because all three hold the same object and image distances.</p>
+<dl class="readout" aria-live="polite">
+  <div><dt>Object u</dt><dd id="l-u">30 cm</dd></div>
+  <div><dt>Image v</dt><dd id="l-v">15 cm</dd></div>
+  <div class="out"><dt>Focal length f</dt><dd id="l-f">10 cm</dd></div>
+  <div class="out"><dt>Contour chart reads</dt><dd id="l-k">on the 10</dd></div>
+</dl>
+  </div>
+</section>
+<div class="trio">
+  <figure class="chart">
+    <p class="fig-head">A. Three parallel scales</p>
+    <svg id="lens-parallel" class="nomo lettered" aria-label="Thin lens on three parallel reciprocal scales"></svg>
+    <figcaption>Rulers in <span class="f">100/x</span>. Infinity is a tick at the foot. As on <a href="/sheets/thin-lens/">Sheet 03</a>.</figcaption>
+  </figure>
+  <figure class="chart">
+    <p class="fig-head">B. Concurrent scales</p>
+    <svg id="lens-corner" class="nomo lettered" aria-label="Thin lens on two scales at a right angle with the focal length on the diagonal"></svg>
+    <figcaption>Every scale in plain centimetres, all from one corner. Not yet a sheet on this site.</figcaption>
+  </figure>
+  <figure class="chart">
+    <p class="fig-head">C. Contour chart</p>
+    <svg id="lens-contour" class="nomo lettered" aria-label="Thin lens as a contour chart: curves of equal focal length over object and image distance"></svg>
+    <figcaption>Not a nomogram: one point and a family of curves. Drag the point.</figcaption>
+  </figure>
+</div>
+
+<h3>Remarks</h3>
+<p>Look at the ticks before the lines. Drawing A crowds its ticks: the object scale puts everything from 20 cm to 60 cm in a sixth of its length, and its ruler is the reciprocal <span class="f">100/u</span>, so the equation <span class="f">1/u + 1/v = 1/f</span> becomes a sum and the middle scale is an average. Drawing B spaces every centimetre alike, on all three scales. It works because of similar triangles: the line from <span class="f">u</span> on one leg to <span class="f">v</span> on the other crosses the diagonal at the point whose two coordinates are both <span class="f">f</span>, and <span class="f">f/u + f/v = 1</span> is the thin-lens equation multiplied by <span class="f">f</span>. B is the easier chart to read and the worse one to learn from. It hides the reciprocal in its geometry, and it runs out of paper at 60 cm, where A has already reached infinity.</p>
+<p>Now hold the lens in mind and move only the object. In A and B the line turns about one fixed point on the middle scale: a lens is a point. In C the lens is a curve, and focusing it is walking along that curve. That is the exchange d’Ocagne made. On a Cartesian chart a reading is a point where two coordinates meet and a relation is a curve; on his chart a reading is a line and a relation of this kind is a point the lines pass through. Each curve in C meets the square’s diagonal at <span class="f">u = v = 2f</span>, where the image is the size of the object.</p>
+<p>C shows something A and B cannot: every answer at once. One glance says the 10 cm lenses lie on one bend and the 25 cm lenses far out in the corner, and a reader can see each curve flatten as it runs out along an axis, where a large change in the object distance moves the image distance hardly at all. What C cannot do is read a value between its curves. With the point between the 10 and the 15 the reader must guess the fraction, and the readout above only says which two curves it lies between. A and B give a number at every setting. A fourth quantity would cost C a family of curves for each of its values; it costs a nomogram one more scale and a pivot line, as on <a href="/sheets/exposure/">Sheet 08</a>.</p>
+
+<h2>One quadratic, two drawings</h2>
+<p>The root <span class="f">w</span> of <span class="f">w² + uw + v = 0</span>. Neither drawing has three straight scales. Move a ring on either; the other follows.</p>
+<dl class="readout" aria-live="polite">
+  <div><dt>u</dt><dd id="q-u">−4</dd></div>
+  <div><dt>v</dt><dd id="q-v">3</dd></div>
+  <div class="out"><dt>Roots w</dt><dd id="q-r">3 and 1</dd></div>
+  <div><dt>On the circle</dt><dd id="q-d" class="wordy">line crosses the circle twice</dd></div>
+</dl>
+<div class="duo">
+  <figure class="chart">
+    <p class="fig-head">D. A curved scale</p>
+    <svg id="quad-curved" class="nomo lettered" aria-label="Quadratic with u and v on straight parallel scales and w on a curve"></svg>
+    <figcaption>Reads every root that is not negative. A negative root has no place on the curve.</figcaption>
+  </figure>
+  <figure class="chart">
+    <p class="fig-head">E. A circular scale</p>
+    <svg id="quad-circle" class="nomo lettered" aria-label="Quadratic with w on a circle, u on the tangent at the top and v on the vertical diameter"></svg>
+    <figcaption>Reads both roots of either sign. The u ring leaves the tangent when u is between −3 and 3; set such a u in D.</figcaption>
+  </figure>
+</div>
+
+<h3>Directions</h3>
+<ol class="directions">
+  <li>In D, set the left ring at <span class="f">u</span> and the right ring at <span class="f">v</span>. Read <span class="f">w</span> where the line crosses the curve.</li>
+  <li>In E, the same two numbers set the line; it crosses the circle at both roots.</li>
+  <li>Keep <span class="f">u</span> at −4 and raise <span class="f">v</span> to 4, then past it. Watch E.</li>
+</ol>
+
+<h3>Remarks</h3>
+<p>Drawing D keeps <span class="f">u</span> and <span class="f">v</span> on straight parallel rulers, and then the marks for <span class="f">w</span> will not stand in a line. They lie at <span class="f">x = 1/(1 + w)</span>, <span class="f">y = −w²/(1 + w)</span> across the unit square between the rulers, which is a curve; check by putting those points into the line from <span class="f">u</span> to <span class="f">v</span>, and the condition comes out as the quadratic. The curve says where the quadratic is sensitive: near <span class="f">w = 0</span> one unit of <span class="f">w</span> takes about four and a half times as much curve as from 6 to 7, so large roots are read coarsely. And the curve holds only roots from 0 upward. At the default setting the line crosses it twice, at 3 and at 1, both roots; set <span class="f">u</span> to 2 and <span class="f">v</span> to −8 and the roots are 2 and −4, and D shows only the 2. A negative root has to be found by subtraction, as <span class="f">−u − w</span>.</p>
+<p>Drawing E bends the root scale into a whole circle, which holds every <span class="f">w</span> from minus to plus infinity, with 0 at the foot and ±∞ at the top. The line now crosses the circle at both roots, whatever their signs. Raise <span class="f">v</span> toward 4 with <span class="f">u</span> at −4 and the two crossings slide together; at 4 the line just touches the circle at 2, the repeated root, and past 4 it misses, because the roots are no longer real. The sign of the discriminant, <span class="f">u² − 4v</span>, is drawn here: whether the line cuts the circle, touches it or passes it by. Ron Doerfler gives this behaviour for a circular nomogram of the same equation; the drawing here is derived afresh, so its scales are placed differently from his.</p>
+
+<h2>The forms in the register</h2>
+<table class="register by-form">
+  <thead><tr><th>Form</th><th>Reads a relation like</th><th>Sheets</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="title">Three parallel scales</td>
+      <td><span class="f">f₃(w) = α f₁(u) + β f₂(v)</span>. The middle scale stands where the ratio of α to β puts it. Products become sums on logarithmic rulers, reciprocals on reciprocal ones.</td>
+      <td><a href="/sheets/dew-point/">01</a>, <a href="/sheets/body-surface/">02</a>, <a href="/sheets/thin-lens/">03</a>, <a href="/sheets/compound-growth/">04</a>, <a href="/sheets/light-range/">06</a>, <a href="/sheets/rc-time-constant/">07</a>, <a href="/sheets/mass-from-orbit/">09</a>, <a href="/sheets/boiled-egg/">10</a></td>
+    </tr>
+    <tr>
+      <td class="title">A scale graduated twice</td>
+      <td>The same chart with a second set of figures on one scale: a second unit, a rival formula, or one value of a hidden fourth quantity on each side.</td>
+      <td><a href="/sheets/body-surface/">02</a>, <a href="/sheets/compound-growth/">04</a>, <a href="/sheets/light-range/">06</a>, <a href="/sheets/rc-time-constant/">07</a>, <a href="/sheets/boiled-egg/">10</a></td>
+    </tr>
+    <tr>
+      <td class="title">Z chart</td>
+      <td><span class="f">w = u/v</span> or <span class="f">w = uv</span> on evenly graduated rulers: two parallel, one diagonal between them.</td>
+      <td><a href="/sheets/bicycle-gears/">05</a></td>
+    </tr>
+    <tr>
+      <td class="title">Pivot line</td>
+      <td>Four quantities as two three-scale charts sharing an unmarked middle line. The first line finds a point on it; the second turns about that point.</td>
+      <td><a href="/sheets/exposure/">08</a></td>
+    </tr>
+    <tr>
+      <td class="title">Concurrent scales</td>
+      <td><span class="f">1/f₃(w) = 1/f₁(u) + 1/f₂(v)</span> on rulers that meet at their zeros. At 60° between each outer scale and the middle one all three share one unit; at 45° the chart fits a rectangle, as in drawing B.</td>
+      <td>Drawing B above</td>
+    </tr>
+    <tr>
+      <td class="title">Curved scale</td>
+      <td>A relation whose third variable will not stand on a straight line once the other two are given theirs, such as a quadratic’s root when its coefficients have straight parallel rulers.</td>
+      <td>Drawing D above</td>
+    </tr>
+    <tr>
+      <td class="title">Circular scale</td>
+      <td>The same relations bent so a scale closes on itself and holds its whole range, infinity included.</td>
+      <td>Drawing E above</td>
+    </tr>
+    <tr>
+      <td class="title">Grid</td>
+      <td>Four to six variables in one chart, with one scale replaced by a grid of two families of curves, one for each of two variables. Doerfler’s example finds the azimuth of a star from its declination, its altitude and the observer’s latitude.</td>
+      <td>None yet</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>How any of them is made</h2>
+<p>Write each variable’s mark as a point: <span class="f">(x₁(u), y₁(u))</span>, <span class="f">(x₂(v), y₂(v))</span>, <span class="f">(x₃(w), y₃(w))</span>. Three points lie on one line when the determinant of the rows <span class="f">[x y 1]</span> is zero. A chart exists for an equation when the equation can be rewritten as that determinant, with each row holding one variable only. Nomographers then change the determinant by row operations and by projective transformations, which keep straight lines straight, until the scales fall where they read well. D and E are an example: E is D after one such transformation, which sends D’s two parallel rulers to a tangent and a diameter and its curve to a circle, and a straight line still works on it. The forms in the table are the shapes the determinant takes most often.</p>
+
+<h2>Still in use</h2>
+<p>Doerfler, writing in 2009, found nomograms “scattered at best”: simple charts doctors use for probabilities and quantities such as body-mass index, some in science and engineering papers, and some in manufacturers’ catalogues. He notes that the nomogram outlived the slide rule, its contemporary. The slide rule did general arithmetic in a sequence of steps; a nomogram does one equation in one step.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li>Ron Doerfler, “<a href="https://deadreckonings.com/wp-content/uploads/2010/04/the_lost_art_of_nomography.pdf">The Lost Art of Nomography</a>,” <em>The UMAP Journal</em> 30 (4), 2009, 457–493: the concurrent-scale conditions (60° and 45°), the curved-scale quadratic, the circular nomogram for a quadratic (after Epstein, 1958) and its touching and missing lines, the grid nomogram for azimuth, the determinant and its transformations, the slide rule, and the uses today (quoted: “scattered at best”). Drawings D and E here are new derivations, not copies of his figures.</li>
+  <li>“<a href="https://en.wikipedia.org/wiki/Nomogram">Nomogram</a>,” Wikipedia (CC BY-SA): d’Ocagne’s parallel coordinates in place of Cartesian ones. The site’s home page gives its date for d’Ocagne’s invention, 1884; Doerfler gives 1880.</li>
+  <li>The thin-lens equation, <span class="f">1/u + 1/v = 1/f</span>, with its sources, is on <a href="/sheets/thin-lens/">Sheet 03</a>.</li>
+</ul>
+
+<dl class="titleblock">
+  <dt>Drawing</dt><dd>Forms of chart, a reference page</dd>
+  <dt>Charts</dt><dd>Five, live: three for one lens, two for one quadratic</dd>
+  <dt>Engine</dt><dd><code>/js/forms.js</code>, drawn directly, without the sheet engines</dd>
+  <dt>Register</dt><dd><a href="/">Ten sheets</a></dd>
+</dl>
+</main>
+<footer class="foot">
+  <span>Index Line: working nomograms</span>
+  <a href="https://unpromptedworks.com/#about">About this site, which an AI made</a>
+</footer>
+<script type="module" src="/js/forms.js"></script>
+</body>
+</html>
